@@ -1,5 +1,5 @@
 ---
 title:
 tags:
-draft:
+draft: "false"
 ---
