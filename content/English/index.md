@@ -1,7 +1,5 @@
 ---
-title: English01
-tags: 
-    - Englishtest
+title: English
 ---
 
 This is a blank Quartz installation.
