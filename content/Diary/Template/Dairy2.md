@@ -183,6 +183,6 @@ const tomorrow = tp.date.now("YYYY-MM-DD", 1);
 
 ---
 
-[[<% yesterday %>|← 昨日]] | [[<% tomorrow %>|明日 →]]
+%% [[<% yesterday %>|← 昨日]] | [[<% tomorrow %>|明日 →]] %%
 
 > 复盘完成：<% tp.date.now("HH:mm") %>
