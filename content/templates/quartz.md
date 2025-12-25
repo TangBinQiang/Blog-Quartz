@@ -3,9 +3,8 @@ title:
 description:
 permalink:
 aliases:
-draft:
-date: 2025-12-25
+draft: 
+date: <% tp.date.now("YYYY-MM-DD") %>
 tags:
-  - Journal
+  - 
 ---
-6666
