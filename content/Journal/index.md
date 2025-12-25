@@ -1,5 +1,5 @@
 ---
-title: Journal66
+title: Journal
 ---
 
 每天英语期刊阅读
