@@ -8,8 +8,8 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
-    pageTitleSuffix: "",
+    pageTitle: "🌱 Quartz 4",
+    pageTitleSuffix: "", // 浏览器标签页后半段显示内容
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian"],//忽略文件夹
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

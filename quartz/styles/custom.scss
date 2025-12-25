@@ -1,3 +1,20 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+// Example: darken the banner image on dark mode
+img[src*="banner.svg"] {
+  opacity: 0.8;
+}
+
+[saved-theme="dark"] body[data-slug="index"] img[src*="banner.svg"] {
+  filter: invert(100%);
+}
+
+img[src*="NKN(NKN).svg"] {
+  opacity: 0.8;
+}
+
+[saved-theme="dark"] body[data-slug="index"] img[src*="NKN(NKN).svg"] {
+  filter: invert(100%);
+}
