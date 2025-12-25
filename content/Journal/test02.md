@@ -31,3 +31,9 @@
 
 
 **Key cocabulary**
+
+| check in | register |
+| -------- | -------- |
+| under    | dasd     |
+| dasdasd  | sdsadasd |
+| dasdsa   | sdada    |

@@ -1,5 +1,5 @@
 ---
-title: Quartz 4
+title: Quartz 4 Official 
 ---
 
 Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers are [[showcase|already using Quartz]] to publish personal notes, websites, and [digital gardens](https://jzhao.xyz/posts/networked-thought) to the web.
@@ -31,7 +31,7 @@ If you prefer instructions in a video format you can try following Nicole van de
 
 ## 🔧 Features
 
-- [[Obsidian compatibility]], [[full-text search]], [[graph view]], [[wikilinks|wikilinks, transclusions]], [[backlinks]], [[features/Latex|Latex]], [[syntax highlighting]], [[popover previews]], [[Docker Support]], [[i18n|internationalization]], [[comments]] and [many more](./features/) right out of the box
+- [[Obsidian compatibility]], [[full-text search]], [[graph view]], [[wikilinks|wikilinks, transclusions]], [[backlinks]], [[Quartz 4 Official/features/Latex|Latex]], [[syntax highlighting]], [[popover previews]], [[Docker Support]], [[i18n|internationalization]], [[comments]] and [many more](./features/) right out of the box
 - Hot-reload on configuration edits and incremental rebuilds for content edits
 - Simple JSX layouts and [[creating components|page components]]
 - [[SPA Routing|Ridiculously fast page loads]] and tiny bundle sizes
