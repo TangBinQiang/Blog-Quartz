@@ -10,9 +10,9 @@
 
 - 跟在以下动词后必须带 to：
 
-- 表 “意愿 / 计划”：_want, wish, hope, decide, plan, agree, refuse, offer, promise_等，例如：_I want to visit Paris._（我想去巴黎。）
+- 表 “意愿 / 计划”：*want, wish, hope, decide, plan, agree, refuse, offer, promise*等，例如：_I want to visit Paris._（我想去巴黎。）
 
-- 表 “能力 / 尝试”：_manage, fail, afford, attempt_等，例如：_We can't afford to buy a house now._（我们现在买不起房。）
+- 表 “能力 / 尝试”：*manage, fail, afford, attempt*等，例如：_We can't afford to buy a house now._（我们现在买不起房。）
 
 ### 三、不定式作**表语**时
 
@@ -34,7 +34,7 @@
 
 - 结果状语（表 “…… 到以至于”）：_He is old enough to drive._（他到了可以开车的年龄。）
 
-- 固定结构：_in order to, so as to_（表 “为了”，其中_so as to_在句末时 to 可省，但规范表达中建议保留），例如：_In order to win, we must work together._（为了赢，我们必须合作。）
+- 固定结构：_in order to, so as to_（表 “为了”，其中*so as to*在句末时 to 可省，但规范表达中建议保留），例如：_In order to win, we must work together._（为了赢，我们必须合作。）
 
 ### 六、固定结构与特殊用法
 
@@ -42,6 +42,6 @@
 
 - **疑问词 + 不定式**：_I don't know what to do next._（我不知道接下来做什么。）
 
-- **被动语态中**，原省略 to 的不定式需**还原 to**：_He was seen to enter the building._（有人看见他进了大楼。）（主动语态为_see him enter_，被动时_enter_前加 to）
+- **被动语态中**，原省略 to 的不定式需**还原 to**：_He was seen to enter the building._（有人看见他进了大楼。）（主动语态为*see him enter*，被动时*enter*前加 to）
 
 这些规则可总结为：**当不定式承担 “主语、宾语（特定动词后）、表语、定语、目的 / 结果状语、固定结构、被动还原” 等功能时，to 不能省略**。

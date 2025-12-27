@@ -10,8 +10,8 @@
   </iframe>
 </div>
 
-
 ---
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
   <iframe 
     src="https://player.bilibili.com/player.html?isOutside=true&aid=115079051739435&bvid=BV1UqezzFErP&cid=31900110421&p=1&autoplay=0" 
@@ -24,11 +24,9 @@
   </iframe>
 </div>
 
-
 ---
 
-* * *
-
+---
 
 **Key cocabulary**
 

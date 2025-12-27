@@ -18,11 +18,11 @@
 
 ### 两句直接对比，一看就懂
 
-|   |   |   |   |
-|---|---|---|---|
-|句子|动词 + to 的关系|后续名词（my son/the forest）的成分|核心原因|
-|That jacket belongs to my son|belong+to = 固定词组（缺一不可）|句子宾语|没有 to 和 my son，句子意思不完整|
-|They hike to the forest|hike 和 to 没关系（to 是单独向导）|介词宾语（整个短语是状语）|没有 to the forest，句子意思仍完整|
+|                               |                                    |                                     |                                    |
+| ----------------------------- | ---------------------------------- | ----------------------------------- | ---------------------------------- |
+| 句子                          | 动词 + to 的关系                   | 后续名词（my son/the forest）的成分 | 核心原因                           |
+| That jacket belongs to my son | belong+to = 固定词组（缺一不可）   | 句子宾语                            | 没有 to 和 my son，句子意思不完整  |
+| They hike to the forest       | hike 和 to 没关系（to 是单独向导） | 介词宾语（整个短语是状语）          | 没有 to the forest，句子意思仍完整 |
 
 简单判断口诀：去掉 “to + 名词”，句子能说通就是状语；说不通就是宾语。
 

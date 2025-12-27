@@ -3,8 +3,8 @@ title:
 description:
 permalink:
 aliases:
-draft: 
+draft:
 date: <% tp.date.now("YYYY-MM-DD") %>
 tags:
-  - 
+  -
 ---
