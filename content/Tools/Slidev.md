@@ -13,3 +13,11 @@ tags:
 
 [Slidev](https://cn.sli.dev/)
 ![](https://cn.sli.dev/logo-title.png)
+
+<div style="display: flex; align-items: center; gap: 20px;">
+  <img src="https://cn.sli.dev/logo-title.png" alt="Logo" style="width: 200px;">
+  <div>
+    <h3>标题文字</h3>
+    <p>这里是描述文字,可以写很多内容。图片在左边,文字在右边并排显示。</p>
+  </div>
+</div>
