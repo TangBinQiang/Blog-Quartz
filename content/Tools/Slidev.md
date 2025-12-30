@@ -29,3 +29,18 @@ tags:
 这里是描述文字,图片会浮动在左侧,文字环绕在右边。
 
 <div style="clear: both;"></div>
+
+
+<div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0;">
+  <img src="https://cn.sli.dev/logo-title.png" alt="Logo" 
+       style="width: 150px; flex-shrink: 0;">
+  <div style="flex: 1;">
+    <h3 style="margin-top: 0;">Slidev</h3>
+    <p>Slidev 是一个基于 Web 的幻灯片制作工具,专为开发者设计。</p>
+    <ul>
+      <li>支持 Markdown 语法</li>
+      <li>代码高亮</li>
+      <li>主题定制</li>
+    </ul>
+  </div>
+</div>
