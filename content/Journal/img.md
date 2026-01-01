@@ -12,3 +12,6 @@
 <a href="Journal/img/img1.png" target="_blank">
   <img src="Journal/img/img1.png" alt="图片描述" style="cursor: zoom-in; width: 80%;">
 </a>
+
+
+![[Pasted image 20260101174157.png]]
