@@ -17,3 +17,13 @@
     allowfullscreen>
   </iframe>
 </div>
+
+<iframe 
+  src="https://www.slideshare.net/slideshow/embed_code/key/FQ8U7l4NH5hMkr?startSlide=1" 
+  width="100%" 
+  height="600"
+  frameborder="0"
+  style="pointer-events: auto !important;"
+  allowfullscreen
+  sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+</iframe>
