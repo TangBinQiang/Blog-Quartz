@@ -6,3 +6,14 @@
     allowfullscreen>
   </iframe>
 </div>
+
+
+<div style="position: relative; z-index: 1; pointer-events: auto;">
+  <iframe 
+    src="https://www.slideshare.net/slideshow/embed_code/key/FQ8U7l4NH5hMkr" 
+    width="100%" 
+    height="600"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
