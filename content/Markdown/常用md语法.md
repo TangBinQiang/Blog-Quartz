@@ -9,31 +9,53 @@
 ```
 
 ## 修改代码的高亮
-```diff
+```diff title="styles/toc.css"
 .toc {
-  display: flex;
-  flex-direction: column;
-  overflow-y: hidden;
-! min-height: 1.4rem;
-- flex: 0 0.5 auto;  
-+ flex: 0 1 auto;
-  &:has(button.toc-header.collapsed) {
-    flex: 0 1 1.4rem;
-  }
+  ...
+! flex: 0 1 auto;    // 修改
+- flex: 0 0.5 auto;  // 删除 
++ flex: 0 1 auto;    // 增加
+  ...
 }
+```
+>可添加 title="styles/toc.css" 指示代码所在路径
+
+## 标注
+
+> [!NOTE]
+> 注释或提示信息
+``` md
+> [!NOTE]
+> 注释或提示信息
+```
+---
+> [!TIP]
+> 建议或技巧
+``` md
+> [!TIP]
+> 建议或技巧
+```
+---
+> [!IMPORTANT]
+> 重要信息
+``` md
+> [!IMPORTANT]
+> 重要信息
+```
+---
+> [!WARNING]
+> 警告信息
+``` md
+> [!WARNING]
+> 警告信息
+```
+---
+> [!CAUTION]
+> 需要谨慎注意的内容
+``` md
+> [!CAUTION]
+> 需要谨慎注意的内容
 ```
 
-```css
-.toc {
-  display: flex;
-  flex-direction: column;
-  overflow-y: hidden;
-  min-height: 1.4rem;
-  flex: 0 0.5 auto; //[!code --]
-  flex: 0 1 auto; //[!code ++]
-  &:has(button.toc-header.collapsed) {
-    flex: 0 1 1.4rem;
-  }
-}
-```
+
 
