@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
-  min-height: 1.4rem;
+! min-height: 1.4rem;
 - flex: 0 0.5 auto;
 + flex: 0 1 auto;
   &:has(button.toc-header.collapsed) {
@@ -29,10 +29,11 @@
   flex-direction: column;
   overflow-y: hidden;
   min-height: 1.4rem;
-  flex: 0 0.5 auto; // [!code --]
-  flex: 0 1 auto; // [!code ++]
+  flex: 0 0.5 auto; //[!code --]
+  flex: 0 1 auto; //[!code ++]
   &:has(button.toc-header.collapsed) {
     flex: 0 1 1.4rem;
   }
 }
 ```
+
