@@ -26,6 +26,18 @@
   ...
 }
 ```
+
+```` c
+```diff title="styles/toc.css"
+.toc {
+  ...
+! flex: 0 1 auto;    // 修改
+- flex: 0 0.5 auto;  // 删除 
++ flex: 0 1 auto;    // 增加
+  ...
+}
+```
+````
 >可添加 title="styles/toc.css" 指示代码所在路径
 ---
 
