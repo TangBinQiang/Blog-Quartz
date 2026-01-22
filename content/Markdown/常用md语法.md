@@ -34,6 +34,7 @@
 ``` md
 ![](https://images.weserv.nl/?url=mmbiz.qpic.cn/sz_mmbiz_jpg/KPsod7HPbJD1jC7xhjILXyI8X2c6eqk85hgWtdc5ftYlbLzX7e5Db7EV8L1iaw3rW80xSs8cGaiaGO1gS3ZNZK9g/640?wx_fmt=jpeg&from=appmsg)
 ```
+> https://images.weserv.nl/?url= 图片链接
 
 ## 标注
 > [!NOTE]
