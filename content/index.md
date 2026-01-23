@@ -9,7 +9,7 @@ title: 首页
 Welcome!
 ```
 
-I'm Jacky. This is my little [[thoughts/hypertext|hypertext]] [[posts/networked-thought|garden]] on the [[thoughts/Internet|Internet]] -- make yourself at home!
+I'm Tang Bin-qiang. This is my little [[thoughts/hypertext|hypertext]] [[posts/networked-thought|garden]] on the [[thoughts/Internet|Internet]] -- make yourself at home!
 
 Currently, I'm exploring what [[posts/agentic-computing|agentic and communal]] technology looks like at [Replit](https://replit.com/). How might we create infrastructures and technologies that empower the residents of the web to have access to the same tools as the architects?
 
