@@ -38,4 +38,126 @@ flowchart LR
   A --> D[分支主题 3]
   A --> E[分支主题 4]
 
+style A stroke-width:3px
+```
+
+
+```mermaid
+
+graph LR
+
+    Browser{{Browser}} --> Window{{Body}} & LinkElement{{Link Element}}
+
+    Window --"getFullSlug()"--> FullSlug[Full Slug]
+
+    LinkElement --".href"--> Relative[Relative URL]
+
+    FullSlug --"simplifySlug()" --> SimpleSlug[Simple Slug]
+
+    SimpleSlug --"pathToRoot()"--> Relative
+
+    SimpleSlug --"resolveRelative()" --> Relative
+
+    MD{{Markdown File}} --> FilePath{{File Path}} & Links[Markdown links]
+
+    Links --"transformLink()"--> Relative
+
+    FilePath --"slugifyFilePath()"--> FullSlug[Full Slug]
+
+    style FullSlug stroke-width:4px
+
+```
+
+```mermaid
+flowchart LR
+  A[test]
+
+  A --> B[分支主题 1]
+    B --> B01[分支主题 1-1]
+    B --> B02[分支主题 1-2]
+
+  A --> C[分支主题 2]
+    C --> C01[分支主题 2-1]
+    C --> C02[分支主题 2-2]
+
+  A --> D[分支主题 3]
+  A --> E[分支主题 4]
+
+  %% 样式定义
+  style A fill:#ffffff,stroke:#1f2a6d,stroke-width:3px,color:#1f2a6d
+
+  style B fill:#f7c948,color:#000
+  style C fill:#e86f5a,color:#fff
+  style D fill:#1f3c88,color:#fff
+  style E fill:#f7c948,color:#000
+
+  style B01 fill:#fff3cd,stroke:#f7c948
+  style B02 fill:#fff3cd,stroke:#f7c948
+
+  style C01 fill:#fdecea,stroke:#e86f5a
+  style C02 fill:#fdecea,stroke:#e86f5a
+
+```
+
+``` mermaid
+flowchart LR
+  A([圆角])
+  B((圆))
+  C{{菱形}}
+  D[/平行四边形/]
+
+```
+
+
+```mermaid
+---
+config:
+  logLevel: 'debug'
+  theme: 'base'
+  gitGraph:
+    showBranches: false
+---
+      gitGraph
+        commit
+        branch hotfix
+        checkout hotfix
+        commit
+        branch develop
+        checkout develop
+        commit id:"ash" tag:"abc"
+        branch featureB
+        checkout featureB
+        commit type:HIGHLIGHT
+        checkout main
+        checkout hotfix
+        commit type:NORMAL
+        checkout develop
+        commit type:REVERSE
+        checkout featureB
+        commit
+        checkout main
+        merge hotfix
+        checkout featureB
+        commit
+        checkout develop
+        branch featureA
+        commit
+        checkout develop
+        merge hotfix
+        checkout featureA
+        commit
+        checkout featureB
+        commit
+        checkout develop
+        merge featureA
+        branch release
+        checkout release
+        commit
+        checkout main
+        commit
+        checkout release
+        merge main
+        checkout develop
+        merge release
+
 ```
