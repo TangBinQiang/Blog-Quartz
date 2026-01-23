@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "blog-quartz.vercel.app", // quartz.jzhao.xyz
+    baseUrl: "blog-quartz.vercel.app", // 部署到 Vercel 时，请修改为自己的域名 如 blog-quartz.jzhao.xyz
     ignorePatterns: ["private", "templates", ".obsidian", "Excalidraw"], //忽略文件夹
     defaultDateType: "modified",
     theme: {
