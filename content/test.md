@@ -11,7 +11,7 @@
 ![icon](notebook-pen.svg)   [Built At Lightspeed](https://www.builtatlightspeed.com/)
 
 # canvas
-<iframe src="未命名.canvas" width="100%" height="800px"></iframe>
+<iframe src="mind.html" width="100%" height="800px"></iframe>
 
 
 
