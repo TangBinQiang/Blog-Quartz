@@ -10,9 +10,12 @@
 
 ![icon](notebook-pen.svg)   [Built At Lightspeed](https://www.builtatlightspeed.com/)
 
-# canvas
-<iframe src="mind.html" width="100%" height="800px"></iframe>
+
 
 
 
 <img src="浙江专升本高数.svg" >
+
+---
+
+![](https://images.weserv.nl/?url=https://mmbiz.qpic.cn/sz_mmbiz_png/KPsod7HPbJAUGHiaPn9Y0Zytic1wibmTQorozpFzszX18HgawU2TT69Q4ITtouOklZEiaUyiar2IicTQc12o6KjNvKvQ/640?wx_fmt=png&amp;from=appmsg)

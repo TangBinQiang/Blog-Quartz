@@ -1,9 +1,0 @@
-{
-	"nodes":[
-		{"id":"28944f672d532919","x":-240,"y":-120,"width":250,"height":60,"type":"text","text":"大叔大婶"},
-		{"id":"a342984bec3b206a","x":0,"y":0,"width":400,"height":400,"type":"file","file":"Development/SE/Backend/Java/02-Java Web框架/未命名.md"}
-	],
-	"edges":[
-		{"id":"29b7fa0816811c3a","fromNode":"28944f672d532919","fromSide":"right","toNode":"a342984bec3b206a","toSide":"top"}
-	]
-}
