@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "blog-quartz.vercel.app", // quartz.jzhao.xyz
     ignorePatterns: ["private", "templates", ".obsidian", "Excalidraw"], //忽略文件夹
     defaultDateType: "modified",
     theme: {
