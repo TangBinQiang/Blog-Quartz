@@ -1,25 +1,65 @@
 ```mermaid
----
-config:
-  kanban:
-    ticketBaseUrl: 'https://github.com/mermaid-js/mermaid/issues/#TICKET#'
----
-kanban
-  Todo
-    [Create Documentation]
-    docs[Create Blog about the new diagram]
-  [In progress]
-    id6[Create renderer so that it works in all cases. We also add some extra text here for testing purposes. And some more just for the extra flare.]
-  id9[Ready for deploy]
-    id8[Design grammar]@{ assigned: 'knsv' }
-  id10[Ready for test]
-    id4[Create parsing tests]@{ ticket: 2038, assigned: 'K.Sveidqvist', priority: 'High' }
-    id66[last item]@{ priority: 'Very Low', assigned: 'knsv' }
-  id11[Done]
-    id5[define getData]
-    id2[Title of diagram is more than 100 chars when user duplicates diagram with 100 char]@{ ticket: 2036, priority: 'Very High'}
-    id3[Update DB function]@{ ticket: 2037, assigned: knsv, priority: 'High' }
+flowchart TB
+    subgraph Todo
+        A[Create Documentation]
+        B[Create Blog about the new diagram]
+    end
+    
+    subgraph "In progress"
+        C[Create renderer so that it works in all cases]
+    end
+    
+    subgraph "Ready for deploy"
+        D[Design grammar]
+    end
+    
+    subgraph "Ready for test"
+        E[Create parsing tests]
+        F[last item]
+    end
+    
+    subgraph Done
+        G[define getData]
+        H[Title of diagram is more than 100 chars]
+        I[Update DB function]
+    end
+    
+    subgraph "Can't reproduce"
+        J[Weird flickering in Firefox]
+    end
+```
 
-  id12[Can't reproduce]
-    id3[Weird flickering in Firefox]
+
+```mermaid
+flowchart LR
+    subgraph Todo
+        A[Create Documentation]
+        B[Create Blog about the new diagram]
+    end
+    
+    subgraph InProgress["In progress"]
+        C[Create renderer so that it works in all cases]
+    end
+    
+    subgraph ReadyDeploy["Ready for deploy"]
+        D[Design grammar<br/>assigned: knsv]
+    end
+    
+    subgraph ReadyTest["Ready for test"]
+        E[Create parsing tests<br/>ticket: 2038<br/>assigned: K.Sveidqvist<br/>priority: High]
+        F[last item<br/>priority: Very Low<br/>assigned: knsv]
+    end
+    
+    subgraph Done
+        G[define getData]
+        H[Title of diagram is more than 100 chars<br/>ticket: 2036<br/>priority: Very High]
+        I[Update DB function<br/>ticket: 2037<br/>assigned: knsv<br/>priority: High]
+    end
+    
+    subgraph CantReproduce["Can't reproduce"]
+        J[Weird flickering in Firefox]
+    end
+    
+    Todo --> InProgress --> ReadyDeploy --> ReadyTest --> Done
+    ReadyTest --> CantReproduce
 ```
