@@ -102,7 +102,6 @@ flowchart LR
 
   style C01 fill:#fdecea,stroke:#e86f5a
   style C02 fill:#fdecea,stroke:#e86f5a
-
 ```
 
 ``` mermaid

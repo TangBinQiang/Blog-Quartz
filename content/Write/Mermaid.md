@@ -63,3 +63,34 @@ flowchart LR
     Todo --> InProgress --> ReadyDeploy --> ReadyTest --> Done
     ReadyTest --> CantReproduce
 ```
+
+
+```mermaid
+flowchart LR
+  A[test]
+
+  A --> B[分支主题 1]
+    B --> B01[分支主题 1-1]
+    B --> B02[分支主题 1-2]
+
+  A --> C[分支主题 2]
+    C --> C01[分支主题 2-1]
+    C --> C02[分支主题 2-2]
+
+  A --> D[分支主题 3]
+  A --> E[分支主题 4]
+
+  %% 样式定义
+  style A fill:#ffffff
+
+  style B fill:#f7c948
+  style C fill:#e86f5a
+  style D fill:#1f3c88
+  style E fill:#f7c948
+
+  style B01 fill:#fff3cd
+  style B02 fill:#fff3cd
+
+  style C01 fill:#fdecea
+  style C02 fill:#fdecea
+```
