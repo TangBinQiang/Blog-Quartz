@@ -6,9 +6,7 @@ aliases:
 draft:
 date: 2026-01-25
 tags:
-  - Java
-  - Java基础
-  - 黑马程序员
+  - JavaSE
 ---
 > [!Quote]- 课程介绍【PPT】
 > <div class="iframe-wrapper">
