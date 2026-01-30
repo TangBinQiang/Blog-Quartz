@@ -12,7 +12,7 @@ rpm -e --nodeps 文件名
 
 > 官网下载地址：https://dev.mysql.com/downloads/mysql/
 
-![](images/2023-07-25142832.png)
+![](2023-07-25142832.png)
 
 下载完后通过Xftp上传到Linux服务器
 
@@ -300,7 +300,7 @@ mysql>flush privileges;    //刷新权限
 
 ```
 
-![](images/2023-07-25170552.png)
+![](2023-07-25170552.png)
 
 >注意：防火墙要开放3306端口
 

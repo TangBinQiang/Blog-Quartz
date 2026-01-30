@@ -2,7 +2,7 @@
 
 >地址：https://nginx.org/en/download.html
 
-![](images/nginx.png)
+![](nginx.png)
 ### 安装nginx需要的包
 
 > yum install -y gcc-c++ zlib zlib-devel openssl openssl-devel pcre pcre-devel
@@ -61,7 +61,7 @@
 ```
 
 浏览器输入ip地址，出现如下页面
-![](images/2023-12-23220818.png)
+![](2023-12-23220818.png)
 
 ### nginx配置
 

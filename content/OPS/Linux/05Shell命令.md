@@ -146,7 +146,7 @@ F S   UID    PID   PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
 
 >top命令开启一个实时查看资源占用的进程
 
-![](images/2023-07-20151013.png)
+![](2023-07-20151013.png)
 
 > Ctrl+z挂起top进程
 

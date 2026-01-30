@@ -164,7 +164,7 @@ systemctl status firewalld
 not running
 ```
 
-![](images/2023-07-19153118.png)
+![](2023-07-19153118.png)
 
 >failed说明没有启动
 
