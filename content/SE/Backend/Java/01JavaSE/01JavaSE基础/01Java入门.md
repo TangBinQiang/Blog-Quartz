@@ -13,9 +13,8 @@ tags:
 > <iframe src="https://show.zohopublic.com/publish/q30k5da6f2004ed5f46b9970499b221e8636c" width="100%" style="height: 50vh; border: none;"></iframe>
 > </div>
 
->要学会使用AI辅助编程，时代变了
-
 > [!TIP] Title
+>要学会使用AI辅助编程，时代变了
 > 提示词要写的专业，表明设定自己身份，再问AI问题
 
 ## **Java 简介**
@@ -32,7 +31,7 @@ Java 是一种广泛使用的高级编程语言，由 Sun Microsystems 于 1995 
 **典型用途：**  
 企业后端服务｜Android 应用（历史主流）｜大数据工具（如 Hadoop）｜桌面应用开发｜嵌入式系统 | 大数据、云计算 | 游戏开发 | 科学计算 | 移动端App开发
 
-> 这些用途不一定用Java开发，也可以用其它语言，比如Python,这是由市场决定的。但Java仍占据企业内部管理服务端软件开发的90%以上市场份额
+> 这些用途不一定用Java开发，也可以用其它语言，比如Python，这是由市场决定的。但Java仍占据企业内部管理服务端软件开发的90%以上市场份额。
 
 **当前主流 LTS 版本：** Java 17、Java 21（含虚拟线程等现代并发特性）
 
