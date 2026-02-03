@@ -41,5 +41,10 @@ Java 是一种广泛使用的高级编程语言，由 Sun Microsystems 于 1995 
     - **用途**：旧式功能机、嵌入式设备（如机顶盒、传感器）——**现已基本淘汰**
 
 > **关系**：SE 是根基，EE 扩展企业能力，ME 针对轻量设备。  
-> **学习路径**：从 **Java SE** 入手，再进阶 EE（Jakarta EE）或相关框架（如 Spring）。。
+> **学习路径**：从 **Java SE** 入手，再进阶 EE（Jakarta EE）或相关框架（如 Spring）。
+
+> [!Quote]- 课程介绍【PPT】
+> <div class="iframe-wrapper">
+> <iframe src="https://show.zohopublic.com/publish/q30k5da6f2004ed5f46b9970499b221e8636c" width="100%" style="height: 50vh; border: none;"></iframe>
+> </div>
 
