@@ -196,3 +196,47 @@ timeline
 ```
 
 ![](https://i.imgur.com/51Pv5nS.png)
+
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#e3f2fd",
+    "primaryTextColor": "#0d47a1",
+    "primaryBorderColor": "#2196f3",
+    "lineColor": "#546e7a",
+    "fontSize": "14px",
+    "tertiaryColor": "#f5f5f5"
+  },
+  "flowchart": { "curve": "basis", "htmlLabels": true, "useMaxWidth": true }
+}}%%
+flowchart TD
+    %% 样式定义
+    classDef main fill:#e3f2fd,stroke:#2196f3,stroke-width:1.5px,color:#0d47a1;
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:1.5px,color:#e65100;
+    classDef term fill:#e8f5e9,stroke:#4caf50,stroke-width:1.5px,color:#1b5e20;
+    classDef storage fill:#f3e5f5,stroke:#9c27b0,stroke-width:1.5px,color:#4a148c;
+
+    %% 节点与流程
+    Start(["开始"]) --> Process1["接收请求"]
+    Process1 --> Condition1{"参数校验"}
+
+    subgraph CoreProcess ["核心业务逻辑"]
+        direction TB
+        StepA["执行计算"] --> StepB["生成结果"]
+    end
+
+    %% 修复点 1：加粗线应使用 == 文字 ==>，禁止混用 -- 与 ==>
+    Condition1 == "合法" ==> CoreProcess
+    %% 修复点 2：虚线文字无需双引号，且避免使用保留字 End 作为 ID
+    Condition1 -. 非法 .-> Finish(["流程结束"])
+
+    CoreProcess ==> DB[("写入数据库")]
+    DB --> Finish
+
+    %% 应用样式
+    class Start,Finish term;
+    class Process1,StepA,StepB main;
+    class Condition1 decision;
+    class DB storage;
+```
