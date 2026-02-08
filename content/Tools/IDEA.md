@@ -1,0 +1,1 @@
+[快速入门 | IntelliJ IDEA 文档](https://www.jetbrains.com.cn/help/idea/getting-started.html)

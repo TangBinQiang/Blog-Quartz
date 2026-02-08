@@ -1,4 +1,4 @@
-
+> 黑马程序员给的资料，什么HelloWorld案例，不用去管自己命名就好了
 
 ## 课堂案例
 
@@ -61,7 +61,11 @@ The harder you try, the luckier you get
 ````
 
 ````java
-
+public class Test01 {  
+	public static void main(String[] args) {  
+		System.out.println("The harder you try, the luckier you get");  
+	}  
+}
 ````
 
 
@@ -147,6 +151,16 @@ true
 ````
 
 ````java
+public class Test03 {
+    public static void main(String[] args) {
+        System.out.println(20);
+        System.out.println(5.2);
+        System.out.println('我');
+        System.out.println("今天的学习，是为了明天更好的自己");
+        System.out.println(true);
+        System.out.println(false);
+    }
+}
 
 ````
 
@@ -190,6 +204,18 @@ true
 ````
 
 ````java
+public class Test04 {
+    public static void main(String[] args) {
+        System.out.println(10);
+        System.out.println(5.33);
+        System.out.println('a');
+//      System.out.println('10'); // 报错 字符类型不能包数字
+        System.out.println("小明");
+        System.out.println(true);
+        System.out.println(false);
+//      System.out.println(null); // 空常量不允许直接输出
+    }
+}
 
 ````
 
