@@ -17,9 +17,10 @@ export const ViewImage: QuartzTransformerPlugin = () => {
             script: `
               document.addEventListener('DOMContentLoaded', function() {
                 if (window.ViewImage) {
-                  ViewImage.init('article img, .content img');
+                  const selector = 'article img:not([src*="banner.svg"]):not([src*="NKN(NKN).svg"]), .content img:not([src*="banner.svg"]):not([src*="NKN(NKN).svg"])';
+                  ViewImage.init(selector);
                   const style = document.createElement('style');
-                  style.textContent = 'article img, .content img { cursor: zoom-in; }';
+                  style.textContent = selector + ' { cursor: zoom-in; }';
                   document.head.appendChild(style);
                 }
               });
