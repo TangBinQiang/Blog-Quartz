@@ -596,6 +596,8 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   })
 
   const containers = [...document.getElementsByClassName("global-graph-outer")] as HTMLElement[]
+  const localContainers = [...document.getElementsByClassName("local-graph-outer")] as HTMLElement[]  
+
   async function renderGlobalGraph() {
     const slug = getFullSlug(window)
     for (const container of containers) {
@@ -624,6 +626,36 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     }
   }
 
+  async function renderLocalGraphPopover() {
+    const slug = getFullSlug(window)
+    for (const container of localContainers) {
+      container.classList.add("active")
+      const sidebar = container.closest(".sidebar") as HTMLElement
+      if (sidebar) {
+        sidebar.style.zIndex = "1"
+      }
+
+      const graphContainer = container.querySelector(
+        ".local-graph-container",
+      ) as HTMLElement
+      registerEscapeHandler(container, hideLocalGraphPopover)
+      if (graphContainer) {
+        globalGraphCleanups.push(await renderGraph(graphContainer, slug))
+      }
+    }
+  }
+
+  function hideLocalGraphPopover() {
+    cleanupGlobalGraphs()
+    for (const container of localContainers) {
+      container.classList.remove("active")
+      const sidebar = container.closest(".sidebar") as HTMLElement
+      if (sidebar) {
+        sidebar.style.zIndex = ""
+      }
+    }
+  }
+
   async function shortcutHandler(e: HTMLElementEventMap["keydown"]) {
     if (e.key === "g" && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
       e.preventDefault()
@@ -638,6 +670,12 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   Array.from(containerIcons).forEach((icon) => {
     icon.addEventListener("click", renderGlobalGraph)
     window.addCleanup(() => icon.removeEventListener("click", renderGlobalGraph))
+  })
+
+  const localContainerIcons = document.getElementsByClassName("local-graph-icon")
+  Array.from(localContainerIcons).forEach((icon) => {
+    icon.addEventListener("click", renderLocalGraphPopover)
+    window.addCleanup(() => icon.removeEventListener("click", renderLocalGraphPopover))
   })
 
   document.addEventListener("keydown", shortcutHandler)

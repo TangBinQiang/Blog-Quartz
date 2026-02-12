@@ -15,30 +15,47 @@
     position: relative;
     overflow: hidden;
 
-    & > .global-graph-icon {
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: var(--dark);
-      opacity: 0.5;
-      width: 24px;
-      height: 24px;
+       & > .graph-icon-group {
       position: absolute;
-      padding: 0.2rem;
-      margin: 0.3rem;
       top: 0;
       right: 0;
-      border-radius: 4px;
-      background-color: transparent;
-      transition: background-color 0.5s ease;
-      cursor: pointer;
-      &:hover {
-        background-color: var(--lightgray);
+      display: flex;
+      gap: 0.1rem;
+      padding: 0.2rem;
+      margin: 0.1rem;
+
+      & > .global-graph-icon,
+      & > .local-graph-icon {
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: var(--dark);
+        opacity: 0.5;
+        width: 24px;
+        height: 24px;
+        padding: 0.2rem;
+        border-radius: 4px;
+        background-color: transparent;
+        transition: background-color 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background-color: var(--lightgray);
+          opacity: 1;
+        }
+
+        & > svg {
+          width: 18px;
+          height: 18px;
+        }
       }
     }
   }
 
-  & > .global-graph-outer {
+  & > .global-graph-outer,
+  & > .local-graph-outer {
     position: fixed;
     z-index: 9999;
     left: 0;
@@ -53,7 +70,8 @@
       display: inline-block;
     }
 
-    & > .global-graph-container {
+    & > .global-graph-container,
+    & > .local-graph-container {
       border: 1px solid var(--lightgray);
       background-color: var(--light);
       border-radius: 5px;
