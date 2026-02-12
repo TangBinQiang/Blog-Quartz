@@ -77,19 +77,21 @@
 > 重要信息
 ```
 
-> [!WARNING]
-> 警告信息
+> [!CAUTION]
+> 需要谨慎注意的内容
 ``` md
-> [!WARNING]
-> 警告信息
+> [!CAUTION]
+> 需要谨慎注意的内容
 ```
 
-> [!CAUTION]
-> 需要谨慎注意的内容
+> [!BUG]
+> BUG信息
 ``` md
-> [!CAUTION]
-> 需要谨慎注意的内容
+> [!WARNING]
+> BUG信息
 ```
+
+
 
 
 
