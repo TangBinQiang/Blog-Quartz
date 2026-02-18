@@ -1,0 +1,20 @@
+{
+  "id": "conv-1771434310919-zynous0yy",
+  "title": "Create AI notes with quartz template",
+  "titleGenerationStatus": "success",
+  "createdAt": 1771434310920,
+  "updatedAt": 1771434346498,
+  "lastResponseAt": 1771434346498,
+  "sessionId": "625bcd47-6f46-49d5-bcf6-9ff14ed19bf3",
+  "sdkSessionId": "625bcd47-6f46-49d5-bcf6-9ff14ed19bf3",
+  "currentNote": "测试.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
