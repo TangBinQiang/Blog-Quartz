@@ -1,0 +1,20 @@
+{
+  "id": "conv-1771435672210-ga8av2di9",
+  "title": "Create salary structure notes with quartz template",
+  "titleGenerationStatus": "success",
+  "createdAt": 1771435672218,
+  "updatedAt": 1771436138059,
+  "lastResponseAt": 1771436138059,
+  "sessionId": "3ce7fbde-56f8-4a05-bc3d-8c7cf9c70636",
+  "sdkSessionId": "3ce7fbde-56f8-4a05-bc3d-8c7cf9c70636",
+  "currentNote": "青年大学习/什么是薪资结构？.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
