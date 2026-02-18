@@ -1,0 +1,20 @@
+{
+  "id": "conv-1771440729457-jdgvovo91",
+  "title": "Create JWT login Mermaid diagram",
+  "titleGenerationStatus": "success",
+  "createdAt": 1771440729458,
+  "updatedAt": 1771443141597,
+  "lastResponseAt": 1771443141597,
+  "sessionId": "575b8c98-b02a-438c-86a9-e60238fc721c",
+  "sdkSessionId": "575b8c98-b02a-438c-86a9-e60238fc721c",
+  "currentNote": "测试.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
