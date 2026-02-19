@@ -1,0 +1,20 @@
+{
+  "id": "conv-1771490888469-8cjtigmbf",
+  "title": "Create Python syntax markdown notes",
+  "titleGenerationStatus": "success",
+  "createdAt": 1771490888470,
+  "updatedAt": 1771490925861,
+  "lastResponseAt": 1771490925861,
+  "sessionId": "a9bc6c5f-8a6e-4dd3-bad2-f88e4a6487f4",
+  "sdkSessionId": "a9bc6c5f-8a6e-4dd3-bad2-f88e4a6487f4",
+  "currentNote": "AI/Python.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
