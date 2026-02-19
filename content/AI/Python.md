@@ -3,7 +3,7 @@ title: Python 基础语法
 date: 2026-02-19
 tags:
   - python
-  - programming
+  - proing
   - basics
 categories:
   - 编程语言
