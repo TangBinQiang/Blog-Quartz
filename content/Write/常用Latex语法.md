@@ -15,6 +15,9 @@ $$p = \frac{a}{\cot \frac{\beta}{2} + \cot \frac{\gamma}{2}} = \frac{b}{\cot \fr
 $$ab + bc + ca = s^2 + p^2 + 4pr$$
 
 34.求极限$\lim\limits_{t \to \pi} \dfrac{\sin mt}{\sin nt}$.
+
 解:原式$=\lim\limits_{t \to \pi} \dfrac{m \cdot \cos mt}{n \cdot \cos nt}$
+
 $=\lim\limits_{t \to \pi} \dfrac{m \cdot (-1)^m}{n \cdot (-1)^n}$
+
 $= (-1)^{m-n} \cdot \dfrac{m}{n}$
