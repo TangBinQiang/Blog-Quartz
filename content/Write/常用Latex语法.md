@@ -14,10 +14,13 @@ $$p = \frac{a}{\cot \frac{\beta}{2} + \cot \frac{\gamma}{2}} = \frac{b}{\cot \fr
 
 $$ab + bc + ca = s^2 + p^2 + 4pr$$
 
-34.求极限$\lim\limits_{t \to \pi} \dfrac{\sin mt}{\sin nt}$.
+34.求极限$\lim\limits_{t \to \pi} \dfrac{\sin mt}{\sin nt}$
 
 解:原式$=\lim\limits_{t \to \pi} \dfrac{m \cdot \cos mt}{n \cdot \cos nt}$
 
 $=\lim\limits_{t \to \pi} \dfrac{m \cdot (-1)^m}{n \cdot (-1)^n}$
 
 $= (-1)^{m-n} \cdot \dfrac{m}{n}$
+
+---
+设函数$f(x)$在$[0,\pi]$上连续，且$\int_{0}^{\pi}f(x)\mathrm{d}x=0$，$\int_{0}^{\pi}f(x)\cos x\mathrm{d}x=0$。求证：在$(0,\pi)$内至少存在两个不同的点$\xi_{1},\xi_{2}$，使$f(\xi_{1})=f(\xi_{2})=0$。
