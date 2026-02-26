@@ -1,0 +1,52 @@
+{
+  "id": "conv-1772095181106-02y84hyih",
+  "title": "Convert image to LaTeX for markdown",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772095181106,
+  "updatedAt": 1772095501404,
+  "lastResponseAt": 1772095361253,
+  "sessionId": "8ca5ac28-4523-4fbb-a799-9adcfe1c1eff",
+  "sdkSessionId": "8ca5ac28-4523-4fbb-a799-9adcfe1c1eff",
+  "currentNote": "demo001.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  },
+  "subagentData": {
+    "call_c84c8bc8c9e8411fa7fc5182": {
+      "id": "call_c84c8bc8c9e8411fa7fc5182",
+      "description": "分析图片并生成LaTeX",
+      "prompt": "请分析目录中的所有图片文件（Pasted image 20260114213313.png, Pasted image 20260209162724.png, Pasted image 20260209162740.png, whiteboard_exported_image.png），识别每张图片的内容，并为每张图片生成相应的LaTeX代码。LaTeX代码应该能够重现或描述图片中的数学公式、图表或内容。分析完成后，将结果组织成适合嵌入到Markdown笔记中的格式。",
+      "mode": "async",
+      "isExpanded": false,
+      "status": "error",
+      "toolCalls": [],
+      "asyncStatus": "orphaned",
+      "agentId": "af02001",
+      "startedAt": 1772095209909,
+      "outputToolId": "call_442805f447284278a25b1985",
+      "result": "Conversation ended before task completed",
+      "completedAt": 1772095501398
+    },
+    "call_6c693f7da7574533b836c33d": {
+      "id": "call_6c693f7da7574533b836c33d",
+      "description": "图片识别LaTeX生成",
+      "prompt": "请分析当前目录下的图片文件：\n1. Pasted image 20260114213313.png\n2. Pasted image 20260209162724.png  \n3. Pasted image 20260209162740.png\n4. whiteboard_exported_image.png\n\n请仔细分析每张图片的内容，识别其中的数学公式、图表或内容，并为每张图片生成相应的LaTeX代码。LaTeX代码应该：\n- 能够准确重现图片中的数学公式\n- 对于图表，使用TikZ或PGFplots生成对应的图形\n- 对于文本内容，使用适当的LaTeX环境格式化\n- 添加适当的注释说明\n\n完成后，将结果整理成适合嵌入到Markdown笔记中的格式，包括图片的markdown引用和对齐的LaTeX代码块。",
+      "mode": "async",
+      "isExpanded": false,
+      "status": "error",
+      "toolCalls": [],
+      "asyncStatus": "orphaned",
+      "agentId": "ae556cb",
+      "startedAt": 1772095283152,
+      "outputToolId": "call_8930f38f7d424f74b8713c83",
+      "result": "Conversation ended before task completed",
+      "completedAt": 1772095501402
+    }
+  }
+}
