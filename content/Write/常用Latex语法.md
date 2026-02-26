@@ -1,4 +1,6 @@
-$$p = (s - a) \tan \frac{\alpha}{2} = (s - b) \tan \frac{\beta}{2} = (s - c) \tan \frac{\gamma}{2}$$
+$$
+p = (s - a) \tan \frac{\alpha}{2} = (s - b) \tan \frac{\beta}{2} = (s - c) \tan \frac{\gamma}{2}
+$$
 
 $$p = 4r \sin \frac{\alpha}{2} \sin \frac{\beta}{2} \sin \frac{\gamma}{2} = s \tan \frac{\alpha}{2} \tan \frac{\beta}{2} \tan \frac{\gamma}{2}$$
 
