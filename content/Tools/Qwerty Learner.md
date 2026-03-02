@@ -1,0 +1,1 @@
+[Qwerty Learner 官网 — 为键盘工作者设计的单词与肌肉记忆锻炼软件](https://qwerty.kaiyi.cool/)
