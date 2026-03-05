@@ -2,6 +2,21 @@
 
 // put your custom CSS here!
 
+// Fix: Ensure code blocks can scroll horizontally when content is too long
+figure[data-rehype-pretty-code-figure] {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+pre > code {
+  overflow-x: auto;
+}
+
 // Example: darken the banner image on dark mode
 img[src*="banner.svg"] {
   opacity: 0.8;
