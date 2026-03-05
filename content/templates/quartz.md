@@ -1,5 +1,7 @@
 ---
 title:
+protected: true
+password: 5438
 description:
 permalink:
 aliases:

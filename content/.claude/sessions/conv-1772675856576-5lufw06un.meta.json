@@ -1,0 +1,20 @@
+{
+  "id": "conv-1772675856576-5lufw06un",
+  "title": "Rename Diary images with date suffix",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772675856577,
+  "updatedAt": 1772676089134,
+  "lastResponseAt": 1772676089134,
+  "sessionId": "0389c29c-c418-44ae-962e-25b7bbcfa866",
+  "sdkSessionId": "0389c29c-c418-44ae-962e-25b7bbcfa866",
+  "currentNote": "Diary/2026-03-06.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
