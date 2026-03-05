@@ -1,0 +1,20 @@
+{
+  "id": "conv-1772539330498-5etuw5n8f",
+  "title": "Solve elementary math problems",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772539330498,
+  "updatedAt": 1772539377115,
+  "lastResponseAt": 1772539346277,
+  "sessionId": "61522a0a-18d6-4612-b694-bc5569bd5a56",
+  "sdkSessionId": "61522a0a-18d6-4612-b694-bc5569bd5a56",
+  "currentNote": "数学/单位换算题.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
