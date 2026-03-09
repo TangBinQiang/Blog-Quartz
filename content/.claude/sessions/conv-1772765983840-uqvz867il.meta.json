@@ -1,0 +1,20 @@
+{
+  "id": "conv-1772765983840-uqvz867il",
+  "title": "Update image paths for Spring AI documentation",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772765983841,
+  "updatedAt": 1772766502209,
+  "lastResponseAt": 1772766502209,
+  "sessionId": "d859fd8d-ed51-4821-b58d-4a7dd17b978e",
+  "sdkSessionId": "d859fd8d-ed51-4821-b58d-4a7dd17b978e",
+  "currentNote": "AI/【实践】开发一个基于Spring+AI+++Ollama+++DeepSeek的文本生成API.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
