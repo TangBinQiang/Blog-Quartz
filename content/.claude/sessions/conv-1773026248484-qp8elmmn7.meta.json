@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773026248484-qp8elmmn7",
+  "title": "Explain RAG technology and its business value",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773026248485,
+  "updatedAt": 1773126650394,
+  "lastResponseAt": 1773026441058,
+  "sessionId": "1838ccec-aa69-4171-a1d7-013078266a0c",
+  "sdkSessionId": "1838ccec-aa69-4171-a1d7-013078266a0c",
+  "currentNote": "Agent/基于LangChain大模型 RAG 与 Agent 智能体实战/RAG.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
