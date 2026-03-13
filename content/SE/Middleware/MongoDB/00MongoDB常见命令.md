@@ -59,10 +59,10 @@ db.集合名.drop()
 
 ---
 ### 文档的插入
-MongoDB的文档（document）相当于关系型数据库的行（row）
-文档（document）的数据结构和 JSON 基本一样
-MongoDB 在存储和传输数据时，并不是直接存储 JSON 文本，而是将其转换为 BSON 格式存储。（BSON 是 **Binary JSON** 的缩写，即二进制格式的 JSON）
-MongoDB写入 JSON 格式的数据，MongoDB 自动转换为 BSON 存储，读取时再自动转回来原JSON是文本格式）
+MongoDB的文档（document）相当于关系型数据库的行（row）<br>
+文档（document）的数据结构和 JSON 基本一样<br>
+MongoDB 在存储和传输数据时，并不是直接存储 JSON 文本，而是将其转换为 BSON 格式存储。（BSON 是 **Binary JSON** 的缩写，即二进制格式的 JSON）<br>
+MongoDB写入 JSON 格式的数据，MongoDB 自动转换为 BSON 存储，读取时再自动转回来原JSON是文本格式）<br>
 
 ```shell
 db.集合名.insert(文档)
