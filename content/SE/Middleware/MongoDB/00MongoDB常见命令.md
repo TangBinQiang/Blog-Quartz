@@ -24,7 +24,7 @@ use 数据库名
 
 ### 数据库的删除
 
-```
+```shell
 db.dropDatabase()
 ```
 
@@ -46,3 +46,6 @@ db.createCollection('集合名')
 show collections
 ```
 
+>查看当前数据库下的所有集合
+
+### 集合的删除
