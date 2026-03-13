@@ -31,6 +31,15 @@ db.dropDatabase()
 >删除当前使用的数据库<br>
 >返回结果{ ok: 1, dropped: '数据库名' } 表示成功删除数据库
 
+---
+### 集合的查看
+
+```shell
+show collections
+```
+
+>查看当前数据库下的所有集合
+
 ### 集合的创建
 
 ```shell
@@ -40,16 +49,29 @@ db.createCollection('集合名')
 >在当前使用的数据库中创建集合<br>
 >MongoDB中的集合相当于关系型数据库中的表
 
-### 集合的查看
+### 集合的删除
 
-```shell
-show collections
+``` shell
+db.集合名.drop()
 ```
 
->查看当前数据库下的所有集合
+>删除指定的集合 返回true 表示成功删除集合
 
-### 集合的删除
-``` 
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+---
+### 文档的插入
+MongoDB的文档（document）相当于关系型数据库的行（row）
+文档（document）的数据结构和 JSON 基本一样
+MongoDB 在存储和传输数据时，并不是直接存储 JSON 文本，而是将其转换为 BSON 格式存储。（BSON 是 **Binary JSON** 的缩写，即二进制格式的 JSON）
+MongoDB写入 JSON 格式的数据，MongoDB 自动转换为 BSON 存储，读取时再自动转回来原JSON是文本格式）
 
+```shell
+db.集合名.insert(文档)
+```
+
+>向集合插入一条文档数据 <br>
+>如果数据库中该集合不存在，自动创建该集合再插入数据
+
+【示例】
+```shell
+db.comment.insert({"articleid":"100000","content":"今天天气真好，阳光明 媚","userid":"1001","nickname":"Rose","createdatetime":new Date(),"likenum":NumberInt(10),"state":null})
 ```
