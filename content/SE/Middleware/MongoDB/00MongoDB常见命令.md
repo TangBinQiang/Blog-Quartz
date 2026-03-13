@@ -49,3 +49,32 @@ show collections
 >查看当前数据库下的所有集合
 
 ### 集合的删除
+``` 
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+
+import style from "./styles/backlinks.scss"
+
+import { resolveRelative, simplifySlug } from "../util/path"
+
+import { i18n } from "../i18n"
+
+import { classNames } from "../util/lang"
+
+import OverflowListFactory from "./OverflowList"
+
+  
+
+interface BacklinksOptions {
+
+  hideWhenEmpty: boolean
+
+}
+
+  
+
+const defaultOptions: BacklinksOptions = {
+
+  hideWhenEmpty: true,
+
+}
+```
