@@ -68,7 +68,6 @@ db.集合名.insert(文档)
 >如果数据库中该集合不存在，自动创建该集合再插入数据
 
 **示例**
-
 ```shell
 db.comment.insert({"articleid":"100000","content":"今天天气真好，阳光明 媚","userid":"1001","nickname":"Rose","createdatetime":new Date(),"likenum":NumberInt(10),"state":null})
 ```
