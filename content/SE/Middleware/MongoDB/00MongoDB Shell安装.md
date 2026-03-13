@@ -11,7 +11,7 @@ tags:
   -
 ---
 > [!tip] 技巧
-> 我直接下载MongoDB Shell的zip包，将里面的mongsh.exe直接拖到    C:\Program Files\MongoDB\Server\8.0\bin目录下
+> 我直接下载MongoDB Shell的zip包，将里面的mongosh.exe直接拖到    C:\Program Files\MongoDB\Server\8.0\bin目录下。其实不安装也没事，MongoDB Campass上就有。
 
 **方法一：添加环境变量（推荐，一劳永逸）**
 
