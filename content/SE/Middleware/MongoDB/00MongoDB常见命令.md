@@ -51,4 +51,5 @@ show collections
 ### 集合的删除
 ``` 
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+
 ```
