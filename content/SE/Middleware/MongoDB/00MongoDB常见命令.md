@@ -144,6 +144,8 @@ db.集合名.updateMany(
 )  
 ```
 
+>根据条件修改所有数据的指定字段
+
 ```shell title="示例"
 db.comment.updateMany(
 	{userid: "1003"},
@@ -151,7 +153,6 @@ db.comment.updateMany(
 )
 ```
 
->根据条件修改所有数据的指定字段
 
 ---
 ### 文档的删除
@@ -163,3 +164,9 @@ db.集合名.remove(
 ```
 
 >根据条件删除文档数据
+
+```shell
+db.集合名.remove({})
+```
+
+>注意：删除所有数据。请慎用
