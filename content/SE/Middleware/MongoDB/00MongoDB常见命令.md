@@ -138,14 +138,28 @@ db.comment.updateOne(
 ```
 
 ```shell
-db.集合名.updateOne(
+db.集合名.updateMany(
 	{key: value},         # 过滤条件
 	{$set: {key:value}}   # 修改语句
 )  
 ```
 
+```shell title="示例"
+db.comment.updateMany(
+	{userid: "1003"},
+	{$set: {nickname: "李四"}}
+)
+```
+
 >根据条件修改所有数据的指定字段
 
-```shell
+---
+### 文档的删除
 
+```shell
+db.集合名.remove(
+	{key: value}  #过滤条件
+)
 ```
+
+>根据条件删除文档数据
