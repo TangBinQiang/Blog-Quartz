@@ -122,9 +122,30 @@ db.comment.insertMany([ {"_id":"1","articleid":"100001","content":"我们不应�
 ### 文档的修改
 
 ```shell
-db.comment.updateOne(
+db.集合名.updateOne(
 	{key: value},         # 过滤条件
-	{$set: {key:value}})  # 修改语句
+	{$set: {key:value}}   # 修改语句
+)  
 ```
 
->
+>根据条件修改一条数据指定的字段
+
+```shell title="示例"
+db.comment.updateOne(
+	{_id: "1"},
+	{$set: {nickname: "李四"}}
+)
+```
+
+```shell
+db.集合名.updateOne(
+	{key: value},         # 过滤条件
+	{$set: {key:value}}   # 修改语句
+)  
+```
+
+>根据条件修改所有数据的指定字段
+
+```shell
+
+```
