@@ -1,4 +1,4 @@
-### 数据库的查看
+### 数据库的查询
 
 ```shell
 show dbs
@@ -38,7 +38,7 @@ db.dropDatabase()
 >返回结果{ ok: 1, dropped: '数据库名' } 表示成功删除数据库
 
 ---
-### 集合的查看
+### 集合的查询
 
 ```shell
 show collections
@@ -105,6 +105,15 @@ db.集合名.find(/正则表达式/)
 
 >MongoDB的模糊查询是通过正则表达式的方式实现
 
+```shell
+db.集合名称.find({ key : { $gt: value }}) // 大于: key > value 
+db.集合名称.find({ key : { $lt: value }}) // 小于: key < value 
+db.集合名称.find({ key : { $gte: value }}) // 大于等于: key >= value 
+db.集合名称.find({ key : { $lte: value }}) // 小于等于: key <= value 
+db.集合名称.find({ key : { $ne: value }}) // 不等于: key != value
+```
+
+>文档的比较查询
 ### 文档的插入
 
 ```shell
@@ -211,4 +220,12 @@ db.集合名.find().sort({key: value})
 ```
 
 > `key: 1` 升序；`key: -1` 降序
+
+### 索引的查询
+
+```shell
+db.comment.getIndexes()
+```
+
+>返回一个集合中的所有索引的数组。
 
