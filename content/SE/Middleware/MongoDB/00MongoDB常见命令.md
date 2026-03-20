@@ -73,7 +73,7 @@ db.集合名.find()
 >查看当前集合下的所有文档数据
 
 ```shell
-db.集合名.find({key: value})
+db.集合名.find({field: value})
 ```
 
 >根据条件查询当前集合下的所有文档数据
@@ -85,18 +85,18 @@ db.集合名.findOne()
 >查看当前集合下的一条文档数据
 
 ```shell
-db.集合名.findOne({key: value})
+db.集合名.findOne({field: value})
 ```
 
 >根据条件查询当前集合下的一条文档数据
 
 ```shell
 db.集合名.find(
-	{key: value},        #过滤条件
-	{key: 1, key: 0})    #指定字段
+	{field: value},        #过滤条件
+	{field: 1, field: 0})    #指定字段
 ```
 
->投影查询指定查询显示结构；默认_id会显示；key: 1显示该字短，key: 0不显示该字段<br>
+>投影查询指定查询显示结构；默认_id会显示；field: 1显示该字短，field: 0不显示该字段<br>
 >注意：投影查询需要添加在`find()`添加过滤条件语句。即使无过滤条件，也要写上`{}`
 
 ```shell
@@ -106,11 +106,11 @@ db.集合名.find(/正则表达式/)
 >MongoDB的模糊查询是通过正则表达式的方式实现
 
 ```shell
-db.集合名称.find({ key : { $gt: value }}) // 大于: key > value 
-db.集合名称.find({ key : { $lt: value }}) // 小于: key < value 
-db.集合名称.find({ key : { $gte: value }}) // 大于等于: key >= value 
-db.集合名称.find({ key : { $lte: value }}) // 小于等于: key <= value 
-db.集合名称.find({ key : { $ne: value }}) // 不等于: key != value
+db.集合名称.find({ field : { $gt: value }}) // 大于: field > value 
+db.集合名称.find({ field : { $lt: value }}) // 小于: field < value 
+db.集合名称.find({ field : { $gte: value }}) // 大于等于: field >= value 
+db.集合名称.find({ field : { $lte: value }}) // 小于等于: field <= value 
+db.集合名称.find({ field : { $ne: value }}) // 不等于: field != value
 ```
 
 >文档的比较查询
@@ -141,8 +141,8 @@ db.comment.insertMany([ {"_id":"1","articleid":"100001","content":"我们不应�
 
 ```shell
 db.集合名.updateOne(
-	{key: value},         # 过滤条件
-	{$set: {key:value}}   # 修改语句
+	{field: value},         # 过滤条件
+	{$set: {field:value}}   # 修改语句
 )  
 ```
 
@@ -157,8 +157,8 @@ db.comment.updateOne(
 
 ```shell
 db.集合名.updateMany(
-	{key: value},         # 过滤条件
-	{$set: {key:value}}   # 修改语句
+	{field: value},         # 过滤条件
+	{$set: {field:value}}   # 修改语句
 )  
 ```
 
@@ -177,7 +177,7 @@ db.comment.updateMany(
 
 ```shell
 db.集合名.remove(
-	{key: value}  #过滤条件
+	{field: value}  #过滤条件
 )
 ```
 
@@ -199,7 +199,7 @@ db.集合名.countDocuments()
 
 ```shell
 db.集合名.countDocuments(
-	{key: value}  #过滤条件
+	{field: value}  #过滤条件
 )
 ```
 
@@ -216,16 +216,43 @@ db.集合名.find().skip().limit()
 ### 文档的排序
 
 ```shell
-db.集合名.find().sort({key: value})
+db.集合名.find().sort({field: value})
 ```
 
-> `key: 1` 升序；`key: -1` 降序
+> `field: 1` 升序；`field: -1` 降序
 
 ### 索引的查询
 
 ```shell
-db.comment.getIndexes()
+db.集合名.getIndexes()
 ```
 
->返回一个集合中的所有索引的数组。
+>查看现有的索引，返回一个集合中的所有索引的数组。
 
+### 索引的创建
+
+```shell
+db.集合名.createIndex({field: options})
+```
+
+>`field: 1` 升序索引  `field: -1`降序索引 
+
+### 索引的删除
+
+```shell
+db.集合名.dropIndex("index_name")
+```
+
+>通过索引名称删除
+
+```shell
+db.集合名.dropIndex({ age: 1 })
+```
+
+>通过索引定义删除
+
+```shell
+db.集合名.dropIndexs()
+```
+
+>删除所有索引  `_id` 这个索引不会被删除
