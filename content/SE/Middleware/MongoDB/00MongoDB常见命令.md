@@ -221,6 +221,7 @@ db.集合名.find().sort({field: value})
 
 > `field: 1` 升序；`field: -1` 降序
 
+---
 ### 索引的查询
 
 ```shell
@@ -235,7 +236,7 @@ db.集合名.getIndexes()
 db.集合名.createIndex({field: options})
 ```
 
->`field: 1` 升序索引  `field: -1`降序索引 
+>`field: 1` 升序索引  `field: -1`降序索引    索引也是个集合
 
 ### 索引的删除
 
@@ -256,3 +257,27 @@ db.集合名.dropIndexs()
 ```
 
 >删除所有索引  `_id` 这个索引不会被删除
+
+### 索引的执行计划
+
+```shell
+db.集合名.find({field: value}).explain("executionStats")
+```
+
+>不传参 只返回查询计划，不实际执行；<br>
+>`"executionStats"` 实际执行并返回详细统计数据；<br>
+>`"allPlansExecution"` 返回所有候选计划的执行情况；
+
+### 索引的覆盖查询
+
+```shell
+db.users.find(
+  { field: 1, _id: 0 }
+).explain("executionStats")
+```
+
+>查询所需的所有字段都包含在索引中，MongoDB 直接从索引返回结果，不需要再去读取文档本身。<br>
+>必须排除 _id，否则需要回文档取数据
+
+---
+###
