@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774855044881-8n2a3k2ke",
+  "title": "Format article text",
+  "titleGenerationStatus": "success",
+  "createdAt": 1774855044882,
+  "updatedAt": 1774855064092,
+  "lastResponseAt": 1774855064092,
+  "sessionId": "09479fe4-31ff-46ef-b986-920f6ccf164e",
+  "sdkSessionId": "09479fe4-31ff-46ef-b986-920f6ccf164e",
+  "currentNote": "Life Insights/脑科学.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

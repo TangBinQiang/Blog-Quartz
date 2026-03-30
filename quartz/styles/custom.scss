@@ -33,3 +33,12 @@ img[src*="NKN(NKN).svg"] {
 [saved-theme="dark"] body[data-slug="index"] img[src*="NKN(NKN).svg"] {
   filter: invert(100%);
 }
+
+// Example: use custom font for poetry
+pre.poetry {
+  font-size: 1.2rem;
+  font-family: biro_script_standardRgus;
+  border: none;
+  padding: 0;
+  position: unset;
+}

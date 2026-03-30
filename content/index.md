@@ -1,21 +1,12 @@
 ---
-title:
-protected: false
-password:
-description: 你所浪费的今天，是昨日死去之人苦苦奢望的明天；你所厌恶的现在，是未来的你再也回不去的曾经。把握住这七个字母，周而复始，珍惜你所拥有的每一天，才会拥有一个永无遗憾的生命！
-permalink:
-aliases:
-draft:
-date: 2026-03-30
-tags:
-  -
+title: 首页
 ---
 
 <img src="./banner.svg" width="701" height="175">
 <img src="./NKN(NKN).svg" width="701" height="175">
 
 ```poetry
-Welcome!111
+你所浪费的今天，是昨日死去之人苦苦奢望的明天；你所厌恶的现在，是未来的你再也回不去的曾经。把握住这七个字母，周而复始，珍惜你所拥有的每一天，才会拥有一个永无遗憾的生命！
 ```
 
 I'm Tang Bin-qiang. This is my little [[thoughts/hypertext|hypertext]] [[posts/networked-thought|garden]] on the [[thoughts/Internet|Internet]] -- make yourself at home!
@@ -33,3 +24,5 @@ As far as 'about' pages go, I hope this acts as an open invitation into the many
 ```poetry
 - jacky :)
 ```
+
+
