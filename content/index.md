@@ -8,7 +8,9 @@ title: 首页
 ```poetry
 你所浪费的今天，是昨日死去之人苦苦奢望的明天；你所厌恶的现在，是未来的你再也回不去的曾经。把握住这七个字母，周而复始，珍惜你所拥有的每一天，才会拥有一个永无遗憾的生命！
 ```
-
+```poetry
+we!
+```
 I'm Tang Bin-qiang. This is my little [[thoughts/hypertext|hypertext]] [[posts/networked-thought|garden]] on the [[thoughts/Internet|Internet]] -- make yourself at home!
 
 Currently, I'm exploring what [[posts/agentic-computing|agentic and communal]] technology looks like at [Replit](https://replit.com/). How might we create infrastructures and technologies that empower the residents of the web to have access to the same tools as the architects?
