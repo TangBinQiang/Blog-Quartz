@@ -173,7 +173,7 @@ RabbitMQ对应的架构如图：
 ## 2.2.收发消息
 ### 2.2.1.交换机
 我们打开Exchanges选项卡，可以看到已经存在很多交换机：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1687137953880-08aa9694-6a1e-4337-8bde-5757ec3c33f8.png#averageHue=%23f7f6f6&clientId=u6a529863-cf4b-4&from=paste&height=605&id=u413741e2&originHeight=750&originWidth=1264&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=60217&status=done&style=none&taskId=u8611b86c-aa50-46d9-855f-8307a318079&title=&width=1019.6974463038903)
+![image.png|88](https://cdn.nlark.com/yuque/0/2023/png/27967491/1687137953880-08aa9694-6a1e-4337-8bde-5757ec3c33f8.png#averageHue=%23f7f6f6&clientId=u6a529863-cf4b-4&from=paste&height=605&id=u413741e2&originHeight=750&originWidth=1264&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=60217&status=done&style=none&taskId=u8611b86c-aa50-46d9-855f-8307a318079&title=&width=1019.6974463038903)
 我们点击任意交换机，即可进入交换机详情页面。仍然会利用控制台中的publish message 发送一条消息：
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1687138031622-ccce4612-954f-42c0-9291-73cf19915e39.png#averageHue=%23f9f8f7&clientId=u6a529863-cf4b-4&from=paste&height=487&id=u9d211d96&originHeight=604&originWidth=947&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=38263&status=done&style=none&taskId=ue134ec0e-ad83-465f-a1b2-97cb7667d75&title=&width=763.9663620647026)
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1687138163403-839087fe-66f7-4710-a866-210aa0282be8.png#averageHue=%23f9f6f6&clientId=u6a529863-cf4b-4&from=paste&height=616&id=ubca84480&originHeight=763&originWidth=1092&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=46085&status=done&style=none&taskId=u5f176fff-eda8-457c-94cd-bb7d6bbd997&title=&width=880.9411482308925)
@@ -210,7 +210,7 @@ RabbitMQ对应的架构如图：
 ## 2.3.数据隔离
 ### 2.3.1.用户管理
 点击`Admin`选项卡，首先会看到RabbitMQ控制台的用户管理界面：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1687151143347-f7e2aaff-0a14-4022-8d50-582ee75e2998.png#averageHue=%23f7f5f5&clientId=uc5430584-57f9-4&from=paste&height=450&id=u2a51a990&originHeight=558&originWidth=1580&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=55212&status=done&style=none&taskId=u18a12c4e-be8d-4ccb-a14a-415a21db44a&title=&width=1274.621807879863)
+![image.png|86](https://cdn.nlark.com/yuque/0/2023/png/27967491/1687151143347-f7e2aaff-0a14-4022-8d50-582ee75e2998.png#averageHue=%23f7f5f5&clientId=uc5430584-57f9-4&from=paste&height=450&id=u2a51a990&originHeight=558&originWidth=1580&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=55212&status=done&style=none&taskId=u18a12c4e-be8d-4ccb-a14a-415a21db44a&title=&width=1274.621807879863)
 这里的用户都是RabbitMQ的管理或运维人员。目前只有安装RabbitMQ时添加的`itheima`这个用户。仔细观察用户表格中的字段，如下：
 
 - `Name`：`itheima`，也就是用户名
