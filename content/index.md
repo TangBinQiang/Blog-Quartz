@@ -9,7 +9,7 @@ title: 首页
 你所浪费的今天，是昨日死去之人苦苦奢望的明天；你所厌恶的现在，是未来的你再也回不去的曾经。把握住这七个字母，周而复始，珍惜你所拥有的每一天，才会拥有一个永无遗憾的生命！
 ```
 ```poetry
-we!
+welcome!
 ```
 I'm Tang Bin-qiang. This is my little [[thoughts/hypertext|hypertext]] [[posts/networked-thought|garden]] on the [[thoughts/Internet|Internet]] -- make yourself at home!
 
@@ -24,7 +24,7 @@ As far as 'about' pages go, I hope this acts as an open invitation into the many
 - [The bookshelf on the far wall](/books): books that are in some state of read, being read, or to be read.
 
 ```poetry
-- jacky :)
+- Tang BinQiang :)
 ```
 
 
