@@ -90,10 +90,10 @@ public class SpringAmqpTest {
 }
 ```
 
-![[Demo工程.png]]
+![[00Demo工程.png]]
 
 #### SpringRabbitListener
->在`consumer`服务的`com.itheima.consumer.listener`包中新建一个类`SpringRabbitListener`，代码如下
+>在`consumer`服务的`com.itheima.consumer.listeners`包中新建一个类`SpringRabbitListener`，代码如下
 ```java
 package com.itheima.consumer.listener;
 
@@ -112,6 +112,6 @@ public class SpringRabbitListener {
 }
 ```
 
-![[Demo工程-1.png]]
+![[00Demo工程-1.png]]
 
-![[Demo工程-2.png]]
+![[00Demo工程-2.png]]

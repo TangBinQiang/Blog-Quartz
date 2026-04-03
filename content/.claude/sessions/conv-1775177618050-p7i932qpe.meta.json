@@ -1,0 +1,20 @@
+{
+  "id": "conv-1775177618050-p7i932qpe",
+  "title": "Rename images with prefix 00",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775177618056,
+  "updatedAt": 1775178050086,
+  "lastResponseAt": 1775178050086,
+  "sessionId": "09e08852-22d1-47ca-a31f-462169d763cf",
+  "sdkSessionId": "09e08852-22d1-47ca-a31f-462169d763cf",
+  "currentNote": "SE/Middleware/RabbitMQ/SpringAMQP/00Demo工程.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
