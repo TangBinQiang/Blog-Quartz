@@ -36,9 +36,15 @@ img[src*="NKN(NKN).svg"] {
 
 // Example: use custom font for poetry
 pre.poetry {
-  font-size: 1.2rem;
-  font-family: biro_script_standardRgus;
+  font-size: 1.25rem;
+  font-family:  biro_script_standardRgus, "Zhi Mang Xing";
   border: none;
   padding: 0;
+  // line-height: 1.2;
   position: unset;
+  background: transparent;      /* 移除背景色 */
+  white-space: pre-wrap;         /* 开启自动换行 */
+  word-break: break-word;        /* 单词太长时自动断行 */
+  overflow: visible;             /* 确保不出现滚动条 */
+  color: var(--dark);            /* 使用主题文字颜色 */
 }

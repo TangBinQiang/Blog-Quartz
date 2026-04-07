@@ -46,6 +46,24 @@ export default (() => {
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link rel="stylesheet" href={googleFontHref(cfg.theme)} />
+            {/* 字体引入 */}
+            {/* biro_script_standardRgus英文字体 */}
+            <link href={fontStylePath} rel="stylesheet" type="text/css" spa-preserve />
+
+            {/* Caveat英文字体 */}
+            <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"/>
+
+            {/* <!-- 智芒星 - 行草书法 --> */}
+            <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet"/>
+
+            {/* <!-- 龙藏体 - 古朴篆刻风 --> */}
+            <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet"/>
+
+            {/* <!-- 侠客行 - 楷书风格 --> */}
+            <link href="https://fonts.googleapis.com/css2?family=Xia+Ke+Xing&display=swap" rel="stylesheet"/>
+
+            {/* <!-- 华康仿宋 / ZCOOL QingKe HuangYou - 活泼手写 --> */}
+            <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet"/>
             {cfg.theme.typography.title && (
               <link rel="stylesheet" href={googleFontSubsetHref(cfg.theme, cfg.pageTitle)} />
             )}
@@ -86,7 +104,6 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
-        <link href={fontStylePath} rel="stylesheet" type="text/css" spa-preserve />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
