@@ -50,6 +50,12 @@ export default (() => {
             {/* biro_script_standardRgus英文字体 */}
             <link href={fontStylePath} rel="stylesheet" type="text/css" spa-preserve />
 
+            {/* Kalam 英语字体 */}
+            <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet"/>
+
+            {/* Neucha 英文字体 */}
+            <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet"/>
+
             {/* Caveat英文字体 */}
             <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"/>
 
