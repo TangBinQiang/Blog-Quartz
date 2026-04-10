@@ -6,6 +6,7 @@
 ### BS 架构原理
 ![[SpringBoot+Vue全栈开发.png]]
 
+---
 ## 开发环境准备
 - JDK下载安装
 - Maven安装配置
