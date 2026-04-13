@@ -1,17 +1,15 @@
 ## 简介
 ### 项目开发框架
 - 后端框架：Springboot + MyBatisPlus
-- 前端框架：Vue + ElementUI
+- 前端框架：Vue + ElementU
 - 项目部署：集成打包 + 云部署
 ### BS 架构原理
 ![[SpringBoot+Vue全栈开发.png]]
-
----
-## 开发环境准备
+### 开发环境准备
 - JDK下载安装
 - Maven安装配置
 - IDEA 开发工具安装使用
-- HoppStoch/Postman测试工具安装
+- HoppStoch/Postman/ApiPost测试工具安装
 
 ---
 ## SpringBoot快速上手
@@ -79,7 +77,7 @@ spring.devtools.restart.exclude=static/**
 ![[SpringBoot+Vue全栈开发-6.png]]
 
 ---
-## Web开发基础
+## SpringBoot Controller
 ### 新建ParamsController
 #### 新建getTest01接口
 ```java
@@ -98,5 +96,116 @@ public class ParamsController {
     }
 
 }
+```
+
+![[SpringBoot+Vue全栈开发-7.png]]
+
+#### 新建getTest02接口
+```java
+    @RequestMapping(value = "/getTest02",method = RequestMethod.GET)
+    public String getTest02(String nickName, String phone) {
+        System.out.println("nickname:"+nickName);
+        System.out.println("phone:"+phone);
+        return "Get请求";
+    }
+```
+
+![[SpringBoot+Vue全栈开发-8.png]]
+![[SpringBoot+Vue全栈开发-9.png]]
+
+#### 新建getTest03接口
+>`@RequestParam` 参数名映射；`required = false` 无需一定要传参
+```java
+    @RequestMapping(value = "/getTest03",method = RequestMethod.GET)
+    public String getTest03(@RequestParam(value = "nickname",required = false) String name) {
+        System.out.println("nickname:"+name);
+        return "Get请求";
+    }
+```
+
+![[SpringBoot+Vue全栈开发-10.png]]
+![[SpringBoot+Vue全栈开发-11.png]]
+
+#### 新建postTest01接口
+```java
+    @RequestMapping(value = "/postTest01",method = RequestMethod.POST)
+    public String postTest01 () {
+        return "Post请求";
+    }
+```
+
+![[SpringBoot+Vue全栈开发-12.png]]
+
+#### 新建postTest02接口
+```java
+    @RequestMapping(value = "/postTest02",method = RequestMethod.POST)
+    public String postTest02 (String username, String password) {
+        System.out.println("nickname:"+username);
+        System.out.println("phone:"+password);
+        return "Post请求";
+    }
+```
+请求体方式请求接口
+![[SpringBoot+Vue全栈开发-13.png]]
+url后面接参数请求接口
+![[SpringBoot+Vue全栈开发-14.png]]
+![[SpringBoot+Vue全栈开发-15.png]]
+
+#### 新建postTest03接口
+>`@ModelAttribute` 表单接受提交对象 不写也可；
+```java
+    @RequestMapping(value = "/postTest03",method = RequestMethod.POST)
+    public String postTest03 (User user){
+        System.out.println(user);
+        return "Post请求";
+    }
+```
+
+新建`entity`包 → 新建User类
+```java
+package com.example.demo01.entity;
+
+public class User {
+
+    private String username;
+
+    private String password;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+}
+```
+
+![[SpringBoot+Vue全栈开发-16.png]]
+![[SpringBoot+Vue全栈开发-17.png]]
+
+#### 新建postTest04接口
+```java
+    @RequestMapping(value = "/postTest04",method = RequestMethod.POST)
+    public String postTest04 (@RequestBody User user){
+        System.out.println(user);
+        return "Post请求";
+    }
 ```
 
