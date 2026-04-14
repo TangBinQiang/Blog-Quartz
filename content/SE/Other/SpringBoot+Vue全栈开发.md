@@ -201,7 +201,7 @@ public class User {
 ![[SpringBoot+Vue全栈开发-17.png]]
 
 #### 新建postTest04接口
-> ``
+> `@RequestBody` 前端传的参数为json类型，数据类型也要和实体字段一一对应；
 ```java
     @RequestMapping(value = "/postTest04",method = RequestMethod.POST)
     public String postTest04 (@RequestBody User user){
@@ -212,3 +212,12 @@ public class User {
 ![[SpringBoot+Vue全栈开发-18.png]]
 ![[SpringBoot+Vue全栈开发-19.png]]
 
+#### 新建test接口 
+>  `/**` 通配符 匹配任意层级的请求路径；`/*`通配符 匹配任意一级的请求路径；
+```java
+    @RequestMapping(value = "/test/**")
+    public String test(){
+        return "通配符请求";
+    }
+```
+![[SpringBoot+Vue全栈开发-21.png]]
