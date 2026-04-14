@@ -201,6 +201,7 @@ public class User {
 ![[SpringBoot+Vue全栈开发-17.png]]
 
 #### 新建postTest04接口
+> ``
 ```java
     @RequestMapping(value = "/postTest04",method = RequestMethod.POST)
     public String postTest04 (@RequestBody User user){
@@ -208,4 +209,6 @@ public class User {
         return "Post请求";
     }
 ```
+![[SpringBoot+Vue全栈开发-18.png]]
+![[SpringBoot+Vue全栈开发-19.png]]
 
