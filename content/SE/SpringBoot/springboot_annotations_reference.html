@@ -1,0 +1,410 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .wrap { padding: 1rem 0; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+  .tab { padding: 5px 14px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary);
+    font-size: 13px; cursor: pointer; background: transparent; color: var(--color-text-secondary);
+    transition: all .15s; }
+  .tab.active, .tab:hover { background: var(--color-background-secondary); color: var(--color-text-primary); }
+  .tab.active { border-color: var(--color-border-primary); font-weight: 500; }
+  .search { width: 100%; padding: 8px 12px; border: 0.5px solid var(--color-border-secondary);
+    border-radius: var(--border-radius-md); font-size: 14px; margin-bottom: 1rem;
+    background: var(--color-background-primary); color: var(--color-text-primary); }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg); margin-bottom: 10px; overflow: hidden; }
+  .card-head { display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; }
+  .card-head:hover { background: var(--color-background-secondary); }
+  .anno-name { font-family: var(--font-mono); font-size: 14px; font-weight: 500;
+    color: var(--color-text-primary); }
+  .badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; white-space: nowrap; }
+  .desc-short { font-size: 13px; color: var(--color-text-secondary); margin-left: auto;
+    text-align: right; max-width: 220px; }
+  .chevron { font-size: 11px; color: var(--color-text-tertiary); margin-left: 4px; transition: transform .2s; }
+  .chevron.open { transform: rotate(90deg); }
+  .card-body { display: none; padding: 0 14px 14px; border-top: 0.5px solid var(--color-border-tertiary); }
+  .card-body.open { display: block; }
+  .desc-full { font-size: 13px; color: var(--color-text-secondary); margin: 10px 0 12px; line-height: 1.6; }
+  .params-title { font-size: 12px; font-weight: 500; color: var(--color-text-tertiary);
+    text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+  .param-row { display: grid; grid-template-columns: 160px 1fr; gap: 0; border-top: 0.5px solid var(--color-border-tertiary); }
+  .param-row:last-child { }
+  .param-name { font-family: var(--font-mono); font-size: 12px; color: var(--color-text-primary);
+    padding: 7px 8px 7px 0; }
+  .param-info { font-size: 12px; color: var(--color-text-secondary); padding: 7px 0; line-height: 1.5; }
+  .param-type { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-info);
+    margin-right: 6px; }
+  .example-block { margin-top: 12px; background: var(--color-background-secondary);
+    border-radius: var(--border-radius-md); padding: 10px 12px; }
+  .example-label { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 6px;
+    font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+  .example-code { font-family: var(--font-mono); font-size: 12px; color: var(--color-text-primary);
+    line-height: 1.7; white-space: pre; overflow-x: auto; }
+  .no-results { text-align: center; color: var(--color-text-tertiary); font-size: 14px; padding: 2rem; }
+</style>
+
+<div class="wrap">
+  <input class="search" type="text" placeholder="搜索注解，如 @RequestMapping、value、path..." oninput="filterAll(this.value)" />
+  <div class="tabs" id="tabs"></div>
+  <div id="list"></div>
+</div>
+
+<script>
+const CATS = {
+  '核心启动': '#3B8BD4',
+  '控制器/请求': '#1D9E75',
+  '注入/组件': '#7F77DD',
+  '数据/事务': '#D85A30',
+  '配置/属性': '#BA7517',
+  '安全/其他': '#888780',
+};
+
+const DATA = [
+  {
+    cat: '核心启动',
+    name: '@SpringBootApplication',
+    short: '启动类入口注解',
+    desc: '组合注解，等价于 @Configuration + @EnableAutoConfiguration + @ComponentScan，标注在主类上以启动 Spring Boot 应用。',
+    params: [
+      { name: 'scanBasePackages', type: 'String[]', desc: '指定扫描包路径，默认扫描当前类所在包及子包' },
+      { name: 'scanBasePackageClasses', type: 'Class<?>[]', desc: '通过类来指定扫描包（类型安全方式）' },
+      { name: 'exclude', type: 'Class<?>[]', desc: '排除特定自动配置类' },
+      { name: 'excludeName', type: 'String[]', desc: '通过类名字符串排除自动配置' },
+    ],
+    example: `@SpringBootApplication(\n  scanBasePackages = "com.example",\n  exclude = {DataSourceAutoConfiguration.class}\n)\npublic class App { ... }`,
+  },
+  {
+    cat: '核心启动',
+    name: '@EnableAutoConfiguration',
+    short: '开启自动配置',
+    desc: '让 Spring Boot 根据类路径依赖自动配置 Spring 容器。通常不单独使用，已包含在 @SpringBootApplication 中。',
+    params: [
+      { name: 'exclude', type: 'Class<?>[]', desc: '排除不需要的自动配置类' },
+      { name: 'excludeName', type: 'String[]', desc: '通过类名字符串排除自动配置' },
+    ],
+    example: `@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})\npublic class App { ... }`,
+  },
+  {
+    cat: '控制器/请求',
+    name: '@RestController',
+    short: 'RESTful 控制器',
+    desc: '组合注解 = @Controller + @ResponseBody，类中所有方法的返回值直接序列化为响应体（JSON/XML），无需逐个加 @ResponseBody。',
+    params: [
+      { name: 'value', type: 'String', desc: '指定 Bean 名称，默认为类名首字母小写' },
+    ],
+    example: `@RestController\npublic class UserController {\n  @GetMapping("/users")\n  public List<User> list() { ... }\n}`,
+  },
+  {
+    cat: '控制器/请求',
+    name: '@RequestMapping',
+    short: '请求路径映射',
+    desc: '将 HTTP 请求映射到控制器方法，可用于类（设置基础路径）或方法（设置具体路由）。',
+    params: [
+      { name: 'value / path', type: 'String[]', desc: '映射的 URL 路径，支持 Ant 风格如 /users/{id}' },
+      { name: 'method', type: 'RequestMethod[]', desc: '限制 HTTP 方法：GET、POST、PUT、DELETE 等' },
+      { name: 'params', type: 'String[]', desc: '限制请求必须含有指定参数，如 "type=admin"' },
+      { name: 'headers', type: 'String[]', desc: '限制请求头，如 "Content-Type=application/json"' },
+      { name: 'consumes', type: 'String[]', desc: '限制请求 Content-Type，如 "application/json"' },
+      { name: 'produces', type: 'String[]', desc: '限制响应 Accept 类型，如 "application/json"' },
+    ],
+    example: `@RequestMapping(\n  value = "/api/users",\n  method = RequestMethod.POST,\n  consumes = "application/json"\n)\npublic User create(...) { ... }`,
+  },
+  {
+    cat: '控制器/请求',
+    name: '@GetMapping / @PostMapping / @PutMapping / @DeleteMapping',
+    short: '快捷 HTTP 方法映射',
+    desc: '@RequestMapping 的快捷变体，分别对应 GET / POST / PUT / DELETE，参数与 @RequestMapping 相同但去掉了 method 参数。',
+    params: [
+      { name: 'value / path', type: 'String[]', desc: '映射 URL 路径' },
+      { name: 'params', type: 'String[]', desc: '限定请求参数条件' },
+      { name: 'headers', type: 'String[]', desc: '限定请求头条件' },
+      { name: 'consumes', type: 'String[]', desc: '限制请求体媒体类型' },
+      { name: 'produces', type: 'String[]', desc: '限制响应媒体类型' },
+    ],
+    example: `@GetMapping("/users/{id}")\npublic User get(@PathVariable Long id) { ... }\n\n@PostMapping(value="/users", consumes="application/json")\npublic User create(@RequestBody UserDTO dto) { ... }`,
+  },
+  {
+    cat: '控制器/请求',
+    name: '@PathVariable',
+    short: '绑定 URL 路径变量',
+    desc: '将 URL 中的模板变量（如 {id}）绑定到方法参数。',
+    params: [
+      { name: 'value / name', type: 'String', desc: '路径变量名，默认与参数名相同' },
+      { name: 'required', type: 'boolean', desc: '是否必须存在，默认 true' },
+    ],
+    example: `@GetMapping("/users/{id}")\npublic User get(@PathVariable("id") Long userId) { ... }`,
+  },
+  {
+    cat: '控制器/请求',
+    name: '@RequestParam',
+    short: '绑定请求查询参数',
+    desc: '将 HTTP 请求的查询参数（?key=value）绑定到方法参数。',
+    params: [
+      { name: 'value / name', type: 'String', desc: '参数名称，默认与方法参数名一致' },
+      { name: 'required', type: 'boolean', desc: '是否必须，默认 true；false 时缺失不报错' },
+      { name: 'defaultValue', type: 'String', desc: '参数缺失时的默认值，设置后 required 自动为 false' },
+    ],
+    example: `@GetMapping("/search")\npublic List<User> search(\n  @RequestParam(defaultValue = "1") int page,\n  @RequestParam(required = false) String keyword\n) { ... }`,
+  },
+  {
+    cat: '控制器/请求',
+    name: '@RequestBody',
+    short: '绑定请求体',
+    desc: '将 HTTP 请求体（通常为 JSON）反序列化并绑定到方法参数，通常与 POST/PUT 一起使用。',
+    params: [
+      { name: 'required', type: 'boolean', desc: '请求体是否必须，默认 true' },
+    ],
+    example: `@PostMapping("/users")\npublic User create(@RequestBody @Valid UserDTO dto) { ... }`,
+  },
+  {
+    cat: '控制器/请求',
+    name: '@ResponseStatus',
+    short: '设置响应状态码',
+    desc: '标注在方法或异常类上，指定响应 HTTP 状态码及原因短语。',
+    params: [
+      { name: 'value / code', type: 'HttpStatus', desc: 'HTTP 状态码，如 HttpStatus.CREATED' },
+      { name: 'reason', type: 'String', desc: '响应的原因短语（会触发异常处理）' },
+    ],
+    example: `@PostMapping("/users")\n@ResponseStatus(HttpStatus.CREATED)\npublic User create(...) { ... }`,
+  },
+  {
+    cat: '注入/组件',
+    name: '@Component',
+    short: '通用组件注解',
+    desc: '将类标记为 Spring 管理的 Bean，由 @ComponentScan 自动检测并注册到容器中。@Service、@Repository、@Controller 均是其特化。',
+    params: [
+      { name: 'value', type: 'String', desc: 'Bean 名称，默认为类名首字母小写' },
+    ],
+    example: `@Component("myHelper")\npublic class StringHelper { ... }`,
+  },
+  {
+    cat: '注入/组件',
+    name: '@Service / @Repository',
+    short: '服务层 / 数据层',
+    desc: '@Service 标注业务逻辑层；@Repository 标注数据访问层，额外支持将持久化异常转换为 Spring DataAccessException。两者参数与 @Component 相同。',
+    params: [
+      { name: 'value', type: 'String', desc: 'Bean 名称，默认为类名首字母小写' },
+    ],
+    example: `@Service\npublic class UserService { ... }\n\n@Repository\npublic class UserRepository { ... }`,
+  },
+  {
+    cat: '注入/组件',
+    name: '@Autowired',
+    short: '自动依赖注入',
+    desc: '按类型自动注入 Bean，支持构造器、字段、Setter 方法注入。推荐使用构造器注入。',
+    params: [
+      { name: 'required', type: 'boolean', desc: '是否必须找到匹配 Bean，默认 true；false 时找不到不报错' },
+    ],
+    example: `@Service\npublic class OrderService {\n  private final UserService userService;\n\n  @Autowired  // 构造器注入（推荐）\n  public OrderService(UserService userService) {\n    this.userService = userService;\n  }\n}`,
+  },
+  {
+    cat: '注入/组件',
+    name: '@Qualifier',
+    short: '指定注入的 Bean 名称',
+    desc: '当同一类型有多个 Bean 时，配合 @Autowired 指定要注入哪一个。',
+    params: [
+      { name: 'value', type: 'String', desc: '要注入的 Bean 名称' },
+    ],
+    example: `@Autowired\n@Qualifier("mysqlDataSource")\nprivate DataSource dataSource;`,
+  },
+  {
+    cat: '注入/组件',
+    name: '@Bean',
+    short: '手动声明 Bean',
+    desc: '用在 @Configuration 类的方法上，将方法返回值注册为 Spring Bean，适合注入第三方库对象。',
+    params: [
+      { name: 'name / value', type: 'String[]', desc: 'Bean 名称，默认为方法名' },
+      { name: 'initMethod', type: 'String', desc: '初始化回调方法名' },
+      { name: 'destroyMethod', type: 'String', desc: '销毁回调方法名，默认自动推断 close/shutdown' },
+    ],
+    example: `@Configuration\npublic class AppConfig {\n  @Bean(name = "redisTemplate", destroyMethod = "close")\n  public RedisTemplate<String, Object> redisTemplate() { ... }\n}`,
+  },
+  {
+    cat: '注入/组件',
+    name: '@Scope',
+    short: 'Bean 作用域',
+    desc: '定义 Bean 的作用域：singleton（默认单例）、prototype（每次创建新实例）、request、session 等。',
+    params: [
+      { name: 'value / scopeName', type: 'String', desc: '"singleton" | "prototype" | "request" | "session"' },
+      { name: 'proxyMode', type: 'ScopedProxyMode', desc: '代理模式，Web 作用域常用 TARGET_CLASS' },
+    ],
+    example: `@Component\n@Scope("prototype")\npublic class ReportBuilder { ... }`,
+  },
+  {
+    cat: '数据/事务',
+    name: '@Transactional',
+    short: '声明式事务管理',
+    desc: '标注在类或方法上，开启 Spring 事务，支持传播行为、隔离级别、超时、只读、回滚规则等精细控制。',
+    params: [
+      { name: 'propagation', type: 'Propagation', desc: '传播行为，默认 REQUIRED（加入或新建事务）' },
+      { name: 'isolation', type: 'Isolation', desc: '隔离级别，默认 DEFAULT（使用数据库默认）' },
+      { name: 'timeout', type: 'int', desc: '事务超时秒数，默认 -1（不超时）' },
+      { name: 'readOnly', type: 'boolean', desc: '只读事务，默认 false；true 可提升查询性能' },
+      { name: 'rollbackFor', type: 'Class<?>[]', desc: '指定触发回滚的异常类，如 Exception.class' },
+      { name: 'noRollbackFor', type: 'Class<?>[]', desc: '指定不触发回滚的异常类' },
+    ],
+    example: `@Transactional(\n  propagation = Propagation.REQUIRED,\n  isolation = Isolation.READ_COMMITTED,\n  rollbackFor = Exception.class,\n  readOnly = false\n)\npublic void transfer(...) { ... }`,
+  },
+  {
+    cat: '数据/事务',
+    name: '@Entity / @Table',
+    short: 'JPA 实体映射',
+    desc: '@Entity 标注 JPA 实体类，@Table 指定对应数据库表名及约束。',
+    params: [
+      { name: '@Entity: name', type: 'String', desc: '实体名，默认为类名' },
+      { name: '@Table: name', type: 'String', desc: '数据库表名，默认为实体名' },
+      { name: '@Table: schema', type: 'String', desc: '指定 schema' },
+      { name: '@Table: uniqueConstraints', type: 'UniqueConstraint[]', desc: '唯一约束' },
+    ],
+    example: `@Entity\n@Table(name = "t_user", schema = "app")\npublic class User {\n  @Id\n  @GeneratedValue(strategy = GenerationType.IDENTITY)\n  private Long id;\n}`,
+  },
+  {
+    cat: '配置/属性',
+    name: '@Configuration',
+    short: '配置类',
+    desc: '标注该类为 Spring 配置类，其中的 @Bean 方法由 Spring 容器管理，默认启用 CGLIB 代理确保 Bean 的单例语义。',
+    params: [
+      { name: 'proxyBeanMethods', type: 'boolean', desc: '默认 true（启用 CGLIB 代理）；false 为轻量模式，方法不走代理（Lite 模式）' },
+    ],
+    example: `@Configuration(proxyBeanMethods = false)\npublic class CacheConfig {\n  @Bean\n  public CacheManager cacheManager() { ... }\n}`,
+  },
+  {
+    cat: '配置/属性',
+    name: '@Value',
+    short: '注入单个配置值',
+    desc: '将 application.properties/yml 中的属性值或 SpEL 表达式注入到字段或方法参数。',
+    params: [
+      { name: 'value', type: 'String', desc: '属性占位符 ${key:default} 或 SpEL 表达式 #{...}' },
+    ],
+    example: `@Value("\${server.port:8080}")\nprivate int port;\n\n@Value("#{systemProperties['user.name']}")\nprivate String username;`,
+  },
+  {
+    cat: '配置/属性',
+    name: '@ConfigurationProperties',
+    short: '批量绑定配置属性',
+    desc: '将配置文件中某个前缀下的所有属性批量绑定到 Java Bean，比 @Value 更适合复杂配置。',
+    params: [
+      { name: 'prefix / value', type: 'String', desc: '属性前缀，如 "app.mail"' },
+      { name: 'ignoreUnknownFields', type: 'boolean', desc: '忽略未知属性，默认 true' },
+      { name: 'ignoreInvalidFields', type: 'boolean', desc: '忽略无效属性，默认 false' },
+    ],
+    example: `@Component\n@ConfigurationProperties(prefix = "app.mail")\npublic class MailProperties {\n  private String host;\n  private int port = 25;\n  // getters & setters\n}`,
+  },
+  {
+    cat: '配置/属性',
+    name: '@Conditional / @ConditionalOnProperty',
+    short: '条件化 Bean 注册',
+    desc: '根据条件决定是否注册 Bean。@ConditionalOnProperty 最常用，当指定属性存在且匹配时才注册。',
+    params: [
+      { name: 'prefix', type: 'String', desc: '属性前缀' },
+      { name: 'name / value', type: 'String[]', desc: '属性名（不含前缀）' },
+      { name: 'havingValue', type: 'String', desc: '属性期望值，默认非 false 即可' },
+      { name: 'matchIfMissing', type: 'boolean', desc: '属性不存在时是否匹配，默认 false' },
+    ],
+    example: `@Bean\n@ConditionalOnProperty(\n  prefix = "app.cache",\n  name = "enabled",\n  havingValue = "true",\n  matchIfMissing = false\n)\npublic CacheManager cacheManager() { ... }`,
+  },
+  {
+    cat: '安全/其他',
+    name: '@Scheduled',
+    short: '定时任务',
+    desc: '将方法标记为定时执行，需在配置类上添加 @EnableScheduling 开启调度。',
+    params: [
+      { name: 'cron', type: 'String', desc: 'Cron 表达式，如 "0 0 12 * * ?"（每天中午12点）' },
+      { name: 'fixedRate', type: 'long', desc: '固定频率（毫秒），上次开始到下次开始的间隔' },
+      { name: 'fixedDelay', type: 'long', desc: '固定延迟（毫秒），上次结束到下次开始的间隔' },
+      { name: 'initialDelay', type: 'long', desc: '首次执行延迟（毫秒）' },
+      { name: 'zone', type: 'String', desc: 'Cron 使用的时区，如 "Asia/Shanghai"' },
+    ],
+    example: `@Scheduled(cron = "0 0 9 * * MON-FRI", zone = "Asia/Shanghai")\npublic void sendDailyReport() { ... }\n\n@Scheduled(fixedDelay = 5000, initialDelay = 1000)\npublic void healthCheck() { ... }`,
+  },
+  {
+    cat: '安全/其他',
+    name: '@Async',
+    short: '异步方法执行',
+    desc: '标注的方法在独立线程中异步执行，需在配置类上添加 @EnableAsync 开启。返回类型应为 void 或 Future/CompletableFuture。',
+    params: [
+      { name: 'value', type: 'String', desc: '指定使用的线程池 Bean 名称，默认使用 SimpleAsyncTaskExecutor' },
+    ],
+    example: `@Async("taskExecutor")\npublic CompletableFuture<String> processAsync(Long id) {\n  // 在独立线程池中执行\n  return CompletableFuture.completedFuture(result);\n}`,
+  },
+  {
+    cat: '安全/其他',
+    name: '@ExceptionHandler',
+    short: '全局异常处理',
+    desc: '标注在方法上，捕获并处理指定异常，配合 @ControllerAdvice 实现全局异常处理。',
+    params: [
+      { name: 'value', type: 'Class<?>[]', desc: '要捕获的异常类型数组' },
+    ],
+    example: `@ControllerAdvice\npublic class GlobalExceptionHandler {\n  @ExceptionHandler({BusinessException.class, IllegalArgumentException.class})\n  @ResponseStatus(HttpStatus.BAD_REQUEST)\n  public ErrorResponse handleBiz(RuntimeException e) { ... }\n}`,
+  },
+];
+
+let activecat = '全部';
+let query = '';
+
+function catColor(cat) { return CATS[cat] || '#888780'; }
+
+function renderTabs() {
+  const cats = ['全部', ...Object.keys(CATS)];
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = cats.map(c =>
+    `<button class="tab ${c === activecat ? 'active' : ''}" onclick="setcat('${c}')">${c}</button>`
+  ).join('');
+}
+
+function setcat(c) { activecat = c; renderAll(); }
+function filterAll(q) { query = q.toLowerCase(); renderAll(); }
+
+function renderAll() {
+  renderTabs();
+  const container = document.getElementById('list');
+  const filtered = DATA.filter(d => {
+    const matchCat = activecat === '全部' || d.cat === activecat;
+    const matchQ = !query || d.name.toLowerCase().includes(query) ||
+      d.short.includes(query) || d.desc.includes(query) ||
+      d.params.some(p => p.name.toLowerCase().includes(query) || p.desc.includes(query));
+    return matchCat && matchQ;
+  });
+  if (!filtered.length) {
+    container.innerHTML = '<div class="no-results">未找到匹配的注解</div>';
+    return;
+  }
+  container.innerHTML = filtered.map((d, i) => {
+    const col = catColor(d.cat);
+    const paramRows = d.params.map(p =>
+      `<div class="param-row">
+        <div class="param-name">${p.name}</div>
+        <div class="param-info"><span class="param-type">${p.type}</span>${p.desc}</div>
+      </div>`
+    ).join('');
+    return `<div class="card">
+      <div class="card-head" onclick="toggle('body-${i}', 'chev-${i}')">
+        <span style="width:8px;height:8px;border-radius:50%;background:${col};flex-shrink:0;display:inline-block"></span>
+        <span class="anno-name">${d.name}</span>
+        <span class="badge" style="background:${col}18;color:${col}">${d.cat}</span>
+        <span class="desc-short">${d.short}</span>
+        <span class="chevron" id="chev-${i}">▶</span>
+      </div>
+      <div class="card-body" id="body-${i}">
+        <p class="desc-full">${d.desc}</p>
+        <div class="params-title">参数</div>
+        ${paramRows}
+        <div class="example-block">
+          <div class="example-label">示例</div>
+          <div class="example-code">${d.example}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggle(bodyId, chevId) {
+  const b = document.getElementById(bodyId);
+  const c = document.getElementById(chevId);
+  const open = b.classList.toggle('open');
+  c.classList.toggle('open', open);
+}
+
+renderAll();
+</script>
