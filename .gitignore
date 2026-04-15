@@ -10,5 +10,3 @@ private/
 .replit
 replit.nix
 content/YinLun/GroupDoc/**
-content/.claude
-content/.claudian
